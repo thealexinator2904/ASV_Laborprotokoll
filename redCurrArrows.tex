@@ -1,0 +1,55 @@
+\makeatletter
+\ctikzset{current arrow color/.initial=black}% create key
+
+\let\old@circ@drawcurrent=\pgf@circ@drawcurrent
+\def\pgf@circ@drawcurrent{\old@circ@drawcurrent}
+
+\pgfdeclareshape{currarrow}{
+\anchor{center}{
+\pgfpointorigin
+}
+\anchor{tip}{
+\pgfpointorigin
+    \pgf@circ@res@step = \pgf@circ@Rlen
+        \divide \pgf@circ@res@step by 16
+\pgf@x  =\pgf@circ@res@step
+}
+\behindforegroundpath{      
+
+\pgfscope
+    \pgf@circ@res@step = \pgf@circ@Rlen
+    \divide \pgf@circ@res@step by 16
+
+    \pgfpathmoveto{\pgfpoint{-.7\pgf@circ@res@step}{0pt}}
+    \pgfpathlineto{\pgfpoint{-.7\pgf@circ@res@step}{-.8\pgf@circ@res@step}}
+    \pgfpathlineto{\pgfpoint{1\pgf@circ@res@step}{0pt}}
+    \pgfpathlineto{\pgfpoint{-.7\pgf@circ@res@step}{.8\pgf@circ@res@step}}
+    \pgfpathlineto{\pgfpoint{-.7\pgf@circ@res@step}{0pt}}           
+    \pgfsetcolor{\pgfkeysvalueof{/tikz/circuitikz/current arrow color}}
+    \pgfusepath{draw,fill}
+
+\endpgfscope
+}
+}
+\pgfdeclareshape{flowarrow}{
+    \anchor{center}{\pgfpointorigin}
+    \anchor{tip}{
+    \pgfpointorigin
+        \pgf@circ@res@step = \pgf@circ@Rlen
+            \divide \pgf@circ@res@step by 16
+    \pgf@x  =\pgf@circ@res@step
+    }
+\behindforegroundpath{
+    \pgfscope
+        \pgf@circ@res@step = \pgf@circ@Rlen
+        \divide \pgf@circ@res@step by 4
+        \pgfpathmoveto{\pgfpoint{-\pgf@circ@res@step}{0pt}}
+        \pgfpathlineto{\pgfpoint{\pgf@circ@res@step}{0pt}}
+        %\pgfsetcolor{\pgfkeysvalueof{/tikz/circuitikz/color}}
+  \pgfsetcolor{\pgfkeysvalueof{/tikz/circuitikz/current arrow color}}
+        \pgfusepath{draw}
+        \pgftransformshift{\pgfpoint{\pgf@circ@res@step}{0pt}}
+        \pgfnode{currarrow}{tip}{}{}{\pgfusepath{fill}}
+    \endpgfscope
+}
+}

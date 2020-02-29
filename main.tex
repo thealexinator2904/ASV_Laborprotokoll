@@ -1,0 +1,64 @@
+%%%%% SOME OPTIONS %%%%% 
+\newcommand{\german}{true} % germanTrue or false --> Switch between german and english headers / titlepage
+\newcommand{\coloredTitlePage}{true} % Switch between colored and BW titlepage
+\newcommand{\company}{false}
+\newcommand{\ECE}{true}
+%%%%% Required Settings for the template %%%%%
+\input{ECEconfig.sty}
+\usepackage{hyperref}
+
+\makeglossaries
+
+\input{redCurrArrows.tex}
+
+\makeatletter
+\newcommand{\myscope}[2] % #1 = name , #2 = rotation angle
+{\draw[thick,rotate=#2] (#1) circle (12pt)
+ (#1) ++(-0.35,-0.1) -- ++(0.3,0.3) --++(0,-0.3)-- ++(0.3,0.3) --++(0,-0.3);
+}
+
+\begin{document}
+\input{frontmatter/glossaries}
+%frontmatter inluding:
+%titlepage, abstract, acknowledgments, declaration, toc, lof, lot
+\frontmatter
+\renewcommand{\thepage}{\Roman{page}}
+
+\input{frontmatter/titlepage}
+
+\tableofcontents
+\printglossary
+%mainmatter inluding: Parts, chapters, sections, appendicies
+\mainmatter
+%Hier die verschiedenn tex_Dokumente der Labore einfügen
+\input{hst_lab_1/lab1.tex}
+\input{hst_lab_2/lab2.tex}
+\input{hst_lab_3/lab3.tex}
+\input{hst_lab_4/lab4.tex}
+\input{hst_lab_5/lab5.tex}
+\input{Geraeteverzeichnis.tex}
+        
+\newpage
+\chapter{Signaturen}
+    Fertig gestellt am 26.02.2020
+    \\*
+    \textbf{Anderle Fabian}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{pics/signature_anderle.png}
+    	\caption{Signatur: Anderle Fabian}
+    	\label{pic:signatur_anderle}
+    \end{figure}
+    
+    \textbf{Grebien Alexander}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{pics/signature_grebien.png}
+    	\caption{Signatur: Grebien Alexander}
+    	\label{pic:signatur_grebien}
+    \end{figure}
+        
+\listoffigures
+\listoftables
+
+\end{document}
