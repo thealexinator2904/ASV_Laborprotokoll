@@ -12,8 +12,8 @@ struct_inv_verst_sim = importdata('Sims/inv_verst.txt', ' ');
 struct_niinv_verst_sim = importdata('Sims/niinv_verst.txt', ' ');
 
 struct_folger_meas = importdata('Messungen/folger_meas.txt');
-struct_inv_verst_meas = importdata('Messungen/folger_meas.txt');
-struct_niinv_verst_meas = importdata('Messungen/folger_meas.txt');
+%struct_inv_verst_meas = importdata('Messungen/folger_meas.txt');
+%struct_niinv_verst_meas = importdata('Messungen/folger_meas.txt');
 %Messungen
 
 %% Folgerschaltung
@@ -22,8 +22,12 @@ fig_folger = figure('Name', 'Folgerschaltung');
 bodePlot_din461(fig_folger,struct_folger_sim.data(:,1),...
     struct_folger_sim.data(:,4),...
     struct_folger_sim.data(:,3),...
-    struct_folger_sim.data(:,2), '', true);
+    struct_folger_sim.data(:,2), '', false);
 %print Meas
+bodePlot_din461(fig_folger, struct_folger_meas.data(:,1), ...
+    struct_folger_meas.data(:,2),...
+    struct_folger_meas.data(:,3),...
+    struct_folger_meas.data(:,4),'*-', true);
 legend('Simulation', 'Messung');
 
 %% invertierender Verstärker
@@ -43,6 +47,7 @@ bodePlot_din461(fig_inv_verst,struct_inv_verst_sim.data(:,1),...
 end
 
 %print Meas
+
 xlim([1 1e5])
 subplot(2,1,1)
 xlim([1 1e5])

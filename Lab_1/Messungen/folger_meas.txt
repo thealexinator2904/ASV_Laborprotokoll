@@ -1,2 +1,0 @@
-Frequenz	U_in	U_out	Phi
-1	1	1	0
