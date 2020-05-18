@@ -1,4 +1,5 @@
 2.1
-1.) offsetspannung 1.792V, bissi schwankend, aber in dem Bereich halt :) 
+1.) offsetspannung 1.792mV, bissi schwankend, aber in dem Bereich halt :) 
 2.) Temperaturverhalten: von 160uV offset auf 2,2mV
 3.) siehe extra Datei 
+
