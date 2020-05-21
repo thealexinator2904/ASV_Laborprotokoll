@@ -12,8 +12,8 @@ struct_inv_verst_sim = importdata('Sims/inv_verst.txt', ' ');
 struct_niinv_verst_sim = importdata('Sims/niinv_verst.txt', ' ');
 
 struct_folger_meas = importdata('Messungen/folger_meas.txt');
-struct_inv_verst_meas = importdata('Messungen/folger_meas.txt');
-%struct_niinv_verst_meas = importdata('Messungen/folger_meas.txt');
+struct_inv_verst_meas = importdata('Messungen/inv_verst_meas.txt');
+struct_niinv_verst_meas = importdata('Messungen/niinv_verst_meas.txt');
 %Messungen
 
 %% Folgerschaltung
@@ -30,7 +30,7 @@ bodePlot_din461(fig_folger, struct_folger_meas.data(:,1), ...
     struct_folger_meas.data(:,4),'*-', true);
 legend('Simulation', 'Messung');
 
-%% invertierender Verstärker
+%% invertierender Verstï¿½rker
 fig_inv_verst = figure('Name', 'invertierender VerstÃ¤rker');
 % print sims 
 for i = 0 : 3
@@ -54,7 +54,7 @@ xlim([1 1e5])
 ylim([-10 100])
 legend('sim1', 'sim2','sim3', 'sim4')
 
-%% nicht invertierender Verstärker
+%% nicht invertierender Verstï¿½rker
 
 fig_niinv_verst = figure('Name', 'nicht invertierender VerstÃ¤rker');
 % Print sims
