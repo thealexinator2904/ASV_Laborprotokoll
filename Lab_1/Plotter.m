@@ -12,7 +12,7 @@ struct_inv_verst_sim = importdata('Sims/inv_verst.txt', ' ');
 struct_niinv_verst_sim = importdata('Sims/niinv_verst.txt', ' ');
 
 struct_folger_meas = importdata('Messungen/folger_meas.txt');
-%struct_inv_verst_meas = importdata('Messungen/folger_meas.txt');
+struct_inv_verst_meas = importdata('Messungen/folger_meas.txt');
 %struct_niinv_verst_meas = importdata('Messungen/folger_meas.txt');
 %Messungen
 
