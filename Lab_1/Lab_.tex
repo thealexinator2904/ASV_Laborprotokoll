@@ -1,0 +1,31 @@
+\section{Spannungsfolger mit uA741}
+\subsection{Aufgabenstellung}
+Die Offsetspannung des Operationsverstärkers ist mit dem Tischmultimeter zu messen, dabei ist mittels eines Potentiometers ein Offsetabgleich vorzunehmen. Danach soll das Gehäuse mit Kältespray abgekühlt werden und die damit verschobene Offsetverschiebung aufzunehmen. 
+
+Die Grenzfrequenz dieser Schaltung ist zu bestimmen und mit einer PSPICE Simulation zu vergleichen. Dabei sollte eine Eingangsspannung mit $V_{PP} = 100 \rm mV$ verwendet werden. 
+
+Der Aussteuerbereich bei einer Eingangsfrequenz von $f=1 \rm kHz$ ist zu bestimmen, dabei sind die Messungen sowohl mit eine Last von $R_{Last} = 2 \rm k\Omega$ als auch ohne Last vorzunehmen. Dafür ist die Amplitude der Eingangsspannung schrittweise zu erhöhen bis eine deutliche Übersteuerung in beiden Halbwellen zu sehen ist. Für diesen Zweck ist die Versorgungsspannung auf $V_{CC} = 10\rm V$ und $V_{EE} = -10 \rm V$ zu verringern. 
+
+Danach ist die negative Versorgungsspannung auf $V_{EE} = -5V$ zu verringern und das daraus resultierende Verhalten zu dokumentieren.
+
+Durch anlegen einer Rechteckspannung ist die Slew Rate des Verstärkers zu bestimmen. Diese ist sowohl mit einem Lastwiderstand von $R_{Last} = 2\rm k\Omega$, als auch mit einer kapazitiven Last von $C_{Last} = 100 \rm nF$ zu bestimmen. 
+
+Durch Kenntnis der maximalen Slew Rate ist nun die sinusförmige Spannung am Eingang anzulegen, welche gerade noch unverzerrt übertragen werden kann. Ausgehend von dieser Spannung ist nun die Frequenz schrittweise zu erhöhen bis eine deutliche Verzerrung zu erkennen ist. 
+\input{Lab_1/Zeichnungen/Folger/Schaltung}
+\subsection{Messaufbau}
+\input{Lab_1/Zeichnungen/Folger/Messaufbau_Offset}
+\input{Lab_1/Zeichnungen/Folger/Messaufbau_Zeitverhalten}
+\subsection{Messergebnisse}
+
+\section{Nicht invertierender Verstärker}
+\subsection{Aufgabenstellung}
+
+\input{Lab_1/Zeichnungen/niinv_verst/Schaltung}
+\subsection{Messaufbau}
+\input{Lab_1/Zeichnungen/niinv_verst/Messaufbau_Zeitverhalten}
+
+
+\section{Invertierender Verstärker}
+\input{Lab_1/Zeichnungen/inv_verst/Schaltung}
+
+\input{Lab_1/Zeichnungen/inv_verst/Messaufbau_Zeitverhalten}

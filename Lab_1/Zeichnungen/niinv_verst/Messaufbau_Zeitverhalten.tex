@@ -1,0 +1,30 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp,yscale=-1] (opamp) {\scalebox{1}[-1]{$\mu A 741$}};
+        \draw (opamp.down) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.up) --++(0,-0.5) node[vee]{$V_{EE}$};
+        
+        \draw (opamp.-) to[short] ++(-0.5,0)
+            to[short] ++(0,-2.5)
+            to[R=$R_1$] ++(0,-1.5) node[ground]{};
+        
+        \draw (opamp.out) to[short,-o] ++(3,0)
+            %Einfügen der Messchaltung
+            to[sV=CH2, color=white, name=S2,o-o] ++(0,-2) node[ground]{};
+        \draw (opamp.+) to[short,-o] ++(-2,0) 
+            %%Einfügen der Messschaltung
+            to[sV=CH1, color=white, name=S1,o-o] ++(0,-2) node[ground] {}
+            to[short,o-] ++(-2,0)
+            to[sV] ++(0,2)
+            to[short,-o] ++(2,0);        
+        \draw (2,0) to[short,*-] ++(0,-2.5)
+            to[R=$R_2$,-*] (-1.7,-2.5);
+            
+        \myscope{S1}{0}
+        \myscope{S2}{0}
+
+        \end{circuitikz}
+    \caption{Nicht invertierender Verstärker, Messaufbau}
+    \label{fig:niinv_Verst_Schaltung_Messaufbau}
+ \end{figure}

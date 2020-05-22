@@ -1,0 +1,24 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp] (opamp) {$\mu A 741$};
+        \draw (opamp.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp.+) to[short,-o] ++(-2,0) node[left] {$U_{In}$};
+        \draw (opamp.out) to[short,-o] ++(3,0) node[right] {$U_{a}$};
+        \draw (opamp.-) to[short] ++(-1,0)
+            to[short] ++(0,2)
+            to[short] ++(6,0)
+            to[short,-*] ++(0,-2.5);
+        \draw (0.3,0.3) to[short] ++(0,0.5)
+            to[short] ++(2.5,0)
+            to[short] (2.8,-1)
+            to[pR, name=offsetPoti] ++(-2,0)
+            to[short] ++(-0.5,0)
+            to[short] (0.3,-0.3);
+        \draw (offsetPoti.wiper) node[vee]{$V_{EE}$};
+        
+        \end{circuitikz}
+    \caption{Spannungsfolger mit Offsettrimmer}
+    \label{fig:Spannungsfolger_Schaltung}
+ \end{figure}

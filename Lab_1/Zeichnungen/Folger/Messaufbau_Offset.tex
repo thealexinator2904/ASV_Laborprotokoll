@@ -1,0 +1,28 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp] (opamp) {$\mu A 741$};
+        \draw (opamp.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp.+) to[short,-o] ++(-1,0) 
+            %%Einfügen der Messschaltung
+            to[short,o-o] ++(0,-1) node[ground] {};
+        \draw (opamp.out) to[short,-o] ++(3,0)
+            %Einfügen der Messchaltung
+            to[voltmeter,o-o] ++(0,-2) node[ground]{};
+        \draw (opamp.-) to[short] ++(-1,0)
+            to[short] ++(0,2)
+            to[short] ++(6,0)
+            to[short,-*] ++(0,-2.5);
+        \draw (0.3,0.3) to[short] ++(0,0.5)
+            to[short] ++(2.5,0)
+            to[short] (2.8,-1)
+            to[pR, name=offsetPoti] ++(-2,0)
+            to[short] ++(-0.5,0)
+            to[short] (0.3,-0.3);
+        \draw (offsetPoti.wiper) node[vee]{$V_{EE}$};
+        
+        \end{circuitikz}
+    \caption{Spannungsfolger, Messaufbau zur Offsetbestimmung, $V_{CC} = 15\rm V$, $V_{EE} = -15\rm V$}
+    \label{fig:Spannungsfolger_Messaufbau_Offset}
+ \end{figure}
