@@ -59,20 +59,22 @@ legend('sim1', 'sim2','sim3', 'sim4')
 fig_niinv_verst = figure('Name', 'nicht invertierender Verstärker');
 % Print sims
 for i = 0 : 5
-if i < 5
-    printscales = false;
-    
-else
-    printscales = true;
-end
 bodePlot_din461(fig_niinv_verst,struct_niinv_verst_sim.data(:,1),...
     struct_niinv_verst_sim.data(:,14+i),...
     struct_niinv_verst_sim.data(:,8+i),...
-    struct_niinv_verst_sim.data(:,2+i), '', printscales);
+    struct_niinv_verst_sim.data(:,2+i), '', false);
 end
 
 %Print Meas
+bodePlot_din461(fig_niinv_verst, struct_niinv_verst_meas.data(:,1), ...
+    struct_niinv_verst_meas.data(:,2), ...
+    struct_niinv_verst_meas.data(:,3), ...
+    struct_niinv_verst_meas.data(:,4), '-*', false);
 
+bodePlot_din461(fig_niinv_verst, struct_niinv_verst_meas.data(:,1), ...
+    struct_niinv_verst_meas.data(:,2), ...
+    struct_niinv_verst_meas.data(:,5), ...
+    struct_niinv_verst_meas.data(:,6), '-*', true);
 legend('sim1', 'sim2','sim3', 'sim4')
 
 %% Figure export
