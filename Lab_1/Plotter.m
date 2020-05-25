@@ -75,3 +75,6 @@ bodePlot_din461(fig_niinv_verst, struct_niinv_verst_meas.data(:,1), ...
 legend('sim1', 'sim2','sim3', 'sim4')
 
 %% Figure export
+hgexport(fig_folger,'Plots/Folger.eps')
+hgexport(fig_inv_verst, 'Plots/inv_verst.eps')
+hgexport(fig_niinv_verst, 'Plots/niinv_verst.eps')
