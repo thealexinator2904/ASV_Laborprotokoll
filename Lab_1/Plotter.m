@@ -34,23 +34,20 @@ legend('Simulation', 'Messung');
 fig_inv_verst = figure('Name', 'invertierender Verstärker');
 % print sims 
 for i = 0 : 3
-if i < 3
-    printscales = false;
-    
-else
-    printscales = true;
-end
 bodePlot_din461(fig_inv_verst,struct_inv_verst_sim.data(:,1),...
     struct_inv_verst_sim.data(:,12+i),...
     struct_inv_verst_sim.data(:,8+i),...
-    struct_inv_verst_sim.data(:,2+i), '', printscales);
+    struct_inv_verst_sim.data(:,2+i), '', false);
 end
 
 %print Meas
-
-xlim([1 1e5])
+bodePlot_din461(fig_inv_verst, struct_inv_verst_meas.data(:,1), ...
+    struct_inv_verst_meas.data(:,2), ...
+    struct_inv_verst_meas.data(:,3), ...
+    struct_inv_verst_meas.data(:,4), '-*', true);
+%xlim([1 1e5])
 subplot(2,1,1)
-xlim([1 1e5])
+%xlim([1 1e5])
 ylim([-10 100])
 legend('sim1', 'sim2','sim3', 'sim4')
 
