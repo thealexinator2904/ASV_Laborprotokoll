@@ -3,3 +3,10 @@
 2.) Temperaturverhalten: von 160uV offset auf 2,2mV
 3.) siehe extra Datei 
 
+2.2
+Widerstandswerte 10x:
+1.994k	17,78k
+Widerstandswerte 100x:
+100,0k	0,996k
+
+2.3
