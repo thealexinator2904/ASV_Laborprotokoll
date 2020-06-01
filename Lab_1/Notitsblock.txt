@@ -10,3 +10,4 @@ Widerstandswerte 100x:
 100,0k	0,996k
 
 2.3
+0.997k	9,98K
