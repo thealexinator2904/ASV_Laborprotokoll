@@ -11,3 +11,9 @@ Widerstandswerte 100x:
 
 2.3
 0.997k	9,98K
+
+2.4
+1kHz 100mVPP 0mV offset
+2KHz 100mVpp 10mV Offset 
+keine Phasenverschiebung
+
