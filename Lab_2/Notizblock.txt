@@ -1,0 +1,4 @@
+3.2:
+2.) in diesem Fall liegt eine zusammengstückelte Parabel vor (integrierendes Verhalten)
+4.) Dann liegt ein simpler Integrierer vor
+
