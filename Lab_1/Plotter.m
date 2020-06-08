@@ -31,7 +31,7 @@ bodePlot_din461(fig_folger, struct_folger_meas.data(:,1), ...
 legend('Simulation', 'Messung');
 
 %% invertierender Verstï¿½rker
-fig_inv_verst = figure('Name', 'invertierender VerstÃ¤rker');
+fig_inv_verst = figure('Name', 'invertierender Verstärker');
 % print sims 
 for i = 0 : 3
 bodePlot_din461(fig_inv_verst,struct_inv_verst_sim.data(:,1),...
