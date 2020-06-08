@@ -1,0 +1,8 @@
+clear;
+clc;
+close all;
+addpath(genpath('Sims/'));
+addpath(genpath('Messungen/'))
+addpath(genpath('../functions'))
+
+struct_TP_meas = importdata('Messungen/tp')
