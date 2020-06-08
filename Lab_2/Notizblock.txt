@@ -2,3 +2,6 @@
 2.) in diesem Fall liegt eine zusammengstückelte Parabel vor (integrierendes Verhalten)
 4.) Dann liegt ein simpler Integrierer vor
 
+7,4730k	744,67E	15,1nF
+3.3:
+7,4730k	744,67E	229nF
