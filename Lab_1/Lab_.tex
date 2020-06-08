@@ -13,9 +13,66 @@ Durch anlegen einer Rechteckspannung ist die Slew Rate des Verstärkers zu besti
 Durch Kenntnis der maximalen Slew Rate ist nun die sinusförmige Spannung am Eingang anzulegen, welche gerade noch unverzerrt übertragen werden kann. Ausgehend von dieser Spannung ist nun die Frequenz schrittweise zu erhöhen bis eine deutliche Verzerrung zu erkennen ist. 
 \input{Lab_1/Zeichnungen/Folger/Schaltung}
 \subsection{Messaufbau}
+Um alle gegebene Aufgabenstellungen erfüllen zu können, wurde die Schaltung mit zwei verschiedenen Messbeschaltungen versehen. 
+
+zur Bestimmung der Offsetspannung wurde der Eingang der Schaltung mit Masse verbunden. Danach wurde die Ausgangsspannung mit dem Tischmultimeter gemessen und aufgezeichnet.
+
+Im zweiten Aufbau wurde der Eingang mit einem Signagenerator betrieben und Ein- und Ausgang mit dem Oszilloskop gemessen. Für bestimmte Messungen wurde der Ausgang zusätzlich mit einem $R_{Last} = 2k\Omega$ und einem $C_{Last} = 100nF$ belastet.
 \input{Lab_1/Zeichnungen/Folger/Messaufbau_Offset}
 \input{Lab_1/Zeichnungen/Folger/Messaufbau_Zeitverhalten}
 \subsection{Messergebnisse}
+Bei der Messung der Offsetspannung ohne dem einbau eines Trimmers zur Anpassung wurde eine Spannung von $V_{IO} = 1,792 mV$ gemessen. Diese Messung konnte mittels des Datenblattes verifiziert werden. Laut diesem sollte die Offsetspannung zwischen 1mV und 5mV liegen.\cite[6]{ti:ua741}
+
+Nun wurde der mithilfe des Trimmers auf eine Offsetspannung von $V_{IO Trimm} = 160 \mu V$ verringert. Durch abkühlen mit einem Kältspray wurde zunächst nur wenig Änderung am Ausgang beobachtet, jedoch erhöhte sich der Offset nach einigen Sekunden signifikant, bis er ein Maximum von $V_{IO} = 2,2mV$ erreichte. 
+
+Wie in Abbildung \ref{fig:Bode_Folger_ua741} zu sehen ist, beträgt die Grenzfrequenz der Schaltung $f_C=850KHz$. Das ist ungefähr 150KHz weniger als durch Angaben im Datenblatt, sowie der Simulation zu erwarten wäre. Die Begründung für dieses Phänomen liegt wahrscheinlich in der kapazitiven Belastung der Schaltung durch das Messequipment, sowie die kleinen Leckströme die über die Kapazitäten des Steckbretts fließen und der nicht-idealen Entkopplung der Schaltung durch den Aufbau am Steckbrett. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Lab_1/Plots/Folger.eps}
+    \caption{Bodediagramm der Folgerschaltung, $V_{inPP}=100mV$, $V_{CC}=-V_{EE}=15V$}
+    \label{fig:Bode_Folger_ua741}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Aussteuerbereich,  $V_{CC}=-V_{EE}=10V$}
+\label{tab:Clip_Folger_ua741}
+\begin{tabular}{|l|l|}
+\hline
+unbelastet       & $R_{Last} = 2k\Omega$ \\ \hline
+$V_{CC} - 0,49V$ & $V_{CC} - 1,23V$      \\ \hline
+$V_{EE} + 1,67V$ & $V_{EE} + 2,39V$      \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Lab_1/Messungen/Folger/uberst-schw3.png}
+    \caption{Aussteuerbereich $uA741$, $CH_{Ref}: R_{Last} = inf$, $CH_{2}: R_{Last} = 2k\Omega$}
+    \label{fig:my_label}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Lab_1/Messungen/Folger/uberst-schw5.png}
+    \caption{Aussteuerbereich Detailansicht $uA741$, $CH_{Ref}: R_{Last} = inf$, $CH_{2}: R_{Last} = 2k\Omega$}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Lab_1/Messungen/Folger/scope_5.png}
+    \caption{Aussteuerbereich $uA741$, $CH_{Ref}: R_{Last} = inf$, $CH_{2}: R_{Last} = 2k\Omega$, $V_{CC} = 10V$, $V_{EE} = -5V$}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Lab_1/Messungen/Folger/uberst-schw13.png}
+    \caption{Slew Rate $uA741$, $CH_{Ref}$}
+    \label{fig:my_label}
+\end{figure}
 
 \section{Nicht invertierender Verstärker}
 \subsection{Aufgabenstellung}
@@ -23,7 +80,6 @@ Durch Kenntnis der maximalen Slew Rate ist nun die sinusförmige Spannung am Ein
 \input{Lab_1/Zeichnungen/niinv_verst/Schaltung}
 \subsection{Messaufbau}
 \input{Lab_1/Zeichnungen/niinv_verst/Messaufbau_Zeitverhalten}
-
 
 \section{Invertierender Verstärker}
 \input{Lab_1/Zeichnungen/inv_verst/Schaltung}
