@@ -17,3 +17,4 @@ Widerstandswerte 100x:
 2KHz 100mVpp 10mV Offset 
 keine Phasenverschiebung
 
+0,99361k	1,0003k	9,9712k
