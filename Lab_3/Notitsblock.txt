@@ -1,0 +1,8 @@
+Präzisisionsgleichrichter
+eigentlich xdach * 0.6366 heißt bei 100mVpp 31,83mV
+100Hz 100mVpp -> Ua = 34,063mV
+1kHz  100mVpp -> Ua = 33,853mV
+5kHz  100mVpp -> Ua = 32,651mV
+7,5kHz 100mVpp -> Ua = 31,871mV
+8,5kHz 100mVpp -> Ua = 31,592mV
+
