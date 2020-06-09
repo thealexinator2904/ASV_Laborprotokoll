@@ -1,20 +1,16 @@
-\newpage
-\chapter{Geräteverzeichnis}
-\begin{table}[!ht]
-    \caption{Geräteverzeichnis}
-    \label{tab:geräteverzeichnis}
-    \centering
-    \\
-    
-    \begin{tabular}{|lx{2pt}l|l|l|}
-        \hline
-        Bezeichnung              &Hersteller    &Typ                       &Seriennummer\\
-        \Xhline{2pt}
-    Oszilloskop             &Keysight       &Infinii Vision DSO-X 3014T &9955909\\
-    Hand-Multimeter         &Agilent        &34450 A                    &9955930\\
-    Tisch-Multimeter        &a               &1                           &1\\
-    Frequenzgenerator       &b               &2                          &2\\
-        \hline
-        
-    \end{tabular}
+\newcommand{\makeGeraeteverzeichnis}[5]{
+\begin{table}[H]
+\centering
+\caption{Geräteverzeichnis (#1) Übung}
+\label{tab:Gerteverzeichnis}
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}l |l|l|l|}
+\hline
+Gerät           & \cellcolor[HTML]{C0C0C0}Hersteller & \cellcolor[HTML]{C0C0C0}Bezeichnung & \cellcolor[HTML]{C0C0C0}Seriennummer \\ \hline
+Multimeter      & Agilent                            & (#2)                              & 9949728                              \\ \hline
+Netzteil        & TTI                                & (#3)                            & 9949264                              \\ \hline
+Signalgenerator & Keysight                           & (#4)                       & 9949719                              \\ \hline
+Oszilloskop     & Keysight                           & (#5)                         & 9949710                              \\ \hline
+\end{tabular}
 \end{table}
+}
