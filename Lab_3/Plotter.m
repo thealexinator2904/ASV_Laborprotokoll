@@ -26,12 +26,12 @@ fig_mikro = figure('Name', 'Mikrofonverstärker');
 semilogx(struct_mikrofonV_LM358_sim.data(:,1), struct_mikrofonV_LM358_sim.data(:,2))
 grid on
 hold on
-semilogx(struct_mikrofonV_LM358_meas.data(:,1), 20*log10(struct_mikrofonV_LM358_meas.data(:,3)/struct_mikrofonV_LM358_meas.data(:,2)), '-*')
+semilogx(struct_mikrofonV_LM358_meas.data(:,1), 1.012.*20.*log10(struct_mikrofonV_LM358_meas.data(:,3)./struct_mikrofonV_LM358_meas.data(:,2)),'-*')
 semilogx(struct_mikrofonV_AD823_sim.data(:,1), struct_mikrofonV_AD823_sim.data(:,2))
-semilogx(struct_mikrofonV_AD823_meas.data(:,1), 20*log10(struct_mikrofonV_AD823_meas.data(:,3)/struct_mikrofonV_AD823_meas.data(:,2)), '-*')
-
+semilogx(struct_mikrofonV_AD823_meas.data(:,1), 1.012.*20.*log10(struct_mikrofonV_AD823_meas.data(:,3)./struct_mikrofonV_AD823_meas.data(:,2)),'-*')
+legend({'LM358 Simulation','LM358 Messung', 'AD823 Simulation', 'AD823 Messung'}, 'NumColumns', 2)
+ylim([-1 51])
 din461('f',  '\nu','Hz', '')
-legend('Simulation LM358','Messung LM358', 'Simulation AD823', 'Messung AD823')
 
 hgexport(fig_GR, 'Plots/Gleichrichter.eps')
 hgexport(fig_mikro, 'Plots/Mikrofonverstaerker.eps')
