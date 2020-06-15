@@ -14,6 +14,8 @@ struct_mikrofonV_AD823_sim = importdata('Sims/MikrofonV_AD823.txt');
 struct_mikrofonV_LM358_meas = importdata('Messungen/Mikrofonverst_LM358.txt');
 struct_mikrofonV_AD823_meas = importdata('Messungen/Mikrofonverst_AD523.txt');
 
+struct_sallenKey_sim = importdata('Sims/sallen_key.txt');
+
 fig_GR = figure('Name', 'Präzisionsgleichrichter');
 plot(struct_gleichrichter.ohneTP.data(:,1)*1e3, struct_gleichrichter.ohneTP.data(:,2)*1e3)
 xlim([54 60])
@@ -32,6 +34,22 @@ semilogx(struct_mikrofonV_AD823_meas.data(:,1), 1.012.*20.*log10(struct_mikrofon
 legend({'LM358 Simulation','LM358 Messung', 'AD823 Simulation', 'AD823 Messung'}, 'NumColumns', 2)
 ylim([-1 51])
 din461('f',  '\nu','Hz', '')
+
+fig_sallenKey = figure('Name', 'Sallen Key');
+subplot(2,1,1)
+semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,2))
+grid minor
+hold on
+%din461('f',  '\nu','Hz', '')
+ylim([0 25])
+xlim([1 0.5e3])
+subplot(2,1,2)
+
+semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,3))
+xlim([1 0.5e3])
+grid minor
+hold on
+%din461('\phi',  '°','Hz', '')
 
 hgexport(fig_GR, 'Plots/Gleichrichter.eps')
 hgexport(fig_mikro, 'Plots/Mikrofonverstaerker.eps')
