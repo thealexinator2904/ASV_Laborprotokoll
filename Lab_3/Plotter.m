@@ -40,16 +40,17 @@ subplot(2,1,1)
 semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,2))
 grid minor
 hold on
-%din461('f',  '\nu','Hz', '')
+
 ylim([0 25])
-xlim([1 0.5e3])
+xlim([1 0.25e3])
+din461('f',  '\nu','Hz', '')
 subplot(2,1,2)
 
 semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,3))
-xlim([1 0.5e3])
+xlim([1 0.25e3])
 grid minor
 hold on
-%din461('\phi',  'Â°','Hz', '')
+din461('\phi',  '°','Hz', '')
 
 hgexport(fig_GR, 'Plots/Gleichrichter.eps')
 hgexport(fig_mikro, 'Plots/Mikrofonverstaerker.eps')
