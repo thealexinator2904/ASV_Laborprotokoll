@@ -1,0 +1,21 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp] (opamp) {$LM358$};
+        \draw (opamp.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp.+) to[short] ++(-0.5, 0) to[short] ++(0, -0.5) node[ground]{}; 
+        
+        \draw (opamp.-) to[R=$R_1$,-o] ++(-2,0) node[left]{$U_{in}$};
+        \draw (opamp.-) to[short, *-] ++(0,2)
+            to[R=$R_2$,*-*] ++(3,0)
+            to[short,-*] ++(0,-2.5)
+            to[short] (opamp.out);
+        \draw (opamp.-) to[short, *-] ++(0,3.5)
+            to[C=$C$] ++(3,0)
+            to[short] ++(0,-2);
+        \draw (opamp.out) to[short, -o] (3,0) node[right]{$U_{out}$};
+        \end{circuitikz}
+    \caption{aktiver Tiefpass erster Ordnung}
+    \label{fig:Spannungsfolger_LM358_Schaltung}
+ \end{figure}

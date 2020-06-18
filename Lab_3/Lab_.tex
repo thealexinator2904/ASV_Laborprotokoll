@@ -1,0 +1,87 @@
+\section{Präzisionsgleichrichter mit LM358}
+\subsection{Aufgabenstellung}
+\input{Lab_3/Zeichnungen/Gleichrichter/Schaltung}
+\subsection{Messaufbau}
+Die Schalttung wurde mit dem Signalgenerator betrieben und mit $V_{CC}  -V_{EE} = 15V$ versorgt. Der Ausgang der Schaltung wurde mit dem Oszilloskop erfasst. Bei der Messung des Gleichrichtwertes wurde zusätzlich mit dem Tischmultimeter gemessen.
+\subsection{Auslegung der Schaltung}
+Alle verwendeten Widerstände wurden mit dem Nominalwert $R=10k\Omega$ ausgelegt. Das hat einerseits den Vorteil, dass die Quelle nur eine sehr geringe Last erfährt und andererseits hatten wir einen $R_{Trim} = 10k\Omega$ Trimmer zur Verfügung. Dieser wurde eingebaut um Bauteiltoleranzen kompensieren zu können und dafür zu sorgen, dass beide Halbwellen des gleichgerichteten Sinus gleich groß sind.
+
+Für die beiden Dioden wurde das Modell 1N4148 verwendet.
+\subsection{Interpretation der Messergebnisse}
+Wie in Abbildung \ref{fig:sim_Gleichrichter} zu sehen ist, ist für den Aufbau ohne dem Glättungskondesator C ein gleichgerichter Sinus zu erwarten. Für den Aufbau mit C ist eine schwach pulsierende Gleichspannung zu erwarten die dem Gleichrichtwert des Sinus entspricht.
+\subsubsection{Gleichrichtwert einer Sinusspannung}
+Für die Herleitung dieses Wertes ist die Phasenverschiebung irrelevant. Sie wurde deswegen mit $\phi_x = 0$ angenommen. 
+\begin{align}
+    u(t)_{Signal} =  \hat{u} \cdot \sin(\omega t) \\   
+    u_{glr} = \int_{0}{|u(t)_{Signal}|}
+\end{align}
+Das heißt in diesem Fall ist ein Wert der tiefpassgefilterten Spannung von $U_{gr} =\sqrt{2}\cdot U_{pp}$ zu erwarten. Nun wurde die Frequenz erhöht bis eine Abweichung von 1\% von diesem Wert gemessen wurde. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Lab_3/Plots/Gleichrichter.eps}
+    \caption{Simulationsergebnisse des Präzissionsgleichrichters}
+    \label{fig:sim_Gleichrichter}
+\end{figure}
+\subsection{Ausarbeitungen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Single Supply Mikrofonverstärker mit LM358 und AD823}
+\subsection{Aufgabenstellung}
+Die Schaltung aus Abbildung \ref{fig:Mikrofon_Schaltung} soll bei einer Frequenz von $f=30Hz$ eine Verstärkung von $\nu = 40dB$. 
+
+Danach soll die Schaltung auf dem Steckbrett aufgebaut werden und ein Frequenzgang erfasst werden.
+
+Auf einen Versuch mit Mikrofon und Lautsprecher wurde heuer wegen geringerer Laborzeit verzichtet. 
+
+Nach Aufnahme des Amplitudengangs der Schaltung mit dem LM358 wird der Operationsverstärker mit dem pinkompatiblen AD823 ersetzt. Nun wird der Amplitudengang erneut aufgenommen. Diese beiden Amplitudengänge sind zu vergleichen. 
+\input{Lab_3/Zeichnungen/Mikrofonverstaerker/Schaltung}
+\subsection{Messaufbau}
+\subsection{Auslegung der Schaltung}
+Die Schaltung soll bei $f=30Hz$ bereits eine Verstärkung von $\nu = -100$ aufweisen. Deswegen wurde die Grenzfrequenz der Schaltung mit $f_g=5Hz$ festgelegt. 
+Dazu wurden ein paar der Widerstandswerte im Vorhinein angenommen. Mit dem damit resultierenden Tiefpass kann die Kapazität $C_1$ ausgelegt werden.
+\begin{align}
+    R_4=R_5 &= 100k\Omega \\
+    R_{in} = \frac{R_4\cdot R_5}{R_4+ R_5} &= 50k\Omega \\
+    C_1=\frac{1}{2\pi f_g R_{in}} = \frac{1}{2\cdot \pi \cdot 5\cdot50\cdot 10^3} &= 636.61nF \approx 2\cdot 330nF = 660nF
+\end{align}
+Durch die gegebene Verstärkung kann nun der Spannungsteiler $R_1$ und $R_2$ und die Kapazität $C_3$ ausgelegt werden. Die beiden Widerstände hier verwendeten Widerstände sollten zwar ausreichend groß, jedoch nicht zu groß gewählt werden, da in diesem Bereich der Schaltung parasitäre Kapazitäten sehr leicht zu einem Tiefpassverhalten führen können. Besonders durch den Aufbau auf einem Steckbrett ist diese Schaltung anfällig dafür. 
+\begin{align}
+    R_1 &= 100k\Omega\\
+    \nu = -100 &= -\frac{R_1}{R_2} \\
+    R_2 = \frac{R_1}{\nu} &= 1k\Omega\\
+    C_3=\frac{1}{2\pi f_g R_2} = \frac{1}{2\cdot \pi \cdot 5\cdot1\cdot 10^3} &= 31,813\mu F \approx 32\mu F
+\end{align}
+Da die Kapazität $C_2$ lediglich für eine kapazitive Kopplung der Schaltung sorgen soll, wurde ihr Wert willkürlich auf $C_2=100nF$ festgelegt. 
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[H]
+\centering
+\caption{Bauteilwerte Mikrofonverstärker}
+\label{tab:Bauteile_Mikrofonv}
+\begin{tabular}{|l|r|r|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Bauteilname & \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}gewählter Wert} & \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}gemessener Wert} \\ \hline
+$R_1$       & $100k\Omega$                                                & $99,491k\Omega$                                              \\ \hline
+$R_2$       & $1k\Omega$                                                  & $1,0007k\Omega$                                              \\ \hline
+$R_3$       & $100k\Omega$                                                & $98,098k\Omega$                                              \\ \hline
+$R_4$       & $100k\Omega$                                                & $99,520k\Omega$                                              \\ \hline
+$R_5$       & $100k\Omega$                                                & $98,422k\Omega$                                              \\ \hline
+$C_1$       & $660nF$                                                     & $644nF$                                                      \\ \hline
+$C_2$       & $100nF$                                                     & $98,5nF$                                                     \\ \hline
+$C_3$       & $32\mu F$                                                   & $38,0\mu F$                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Messergebnisse}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Lab_3/Plots/Mikrofonverstaerker.eps}
+    \caption{Vergleich der Amplitudengänge beim Mikrofonverstärker}
+    \label{fig:my_label}
+\end{figure}
+\subsection{Interpretation der Messergebnisse} 
+
+\subsection{Ausarbeitungen}
