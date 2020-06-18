@@ -1,0 +1,16 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp] (opamp) {$LM358$};
+        \draw (opamp.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp.+) to[short,-o] ++(-2,0) node[left] {$U_{In}$};
+        \draw (opamp.out) to[short,-o] ++(2,0) node[right] {$U_{a}$};
+        \draw (opamp.-) to[short] ++(-1,0)
+            to[short] ++(0,2)
+            to[short] ++(4,0)
+            to[short,-*] ++(0,-2.5);
+        \end{circuitikz}
+    \caption{Spannungsfolger mit LM358}
+    \label{fig:Spannungsfolger_LM358_Schaltung}
+ \end{figure}
