@@ -1,0 +1,43 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+        \draw (0,0) node[op amp] (opamp) {$LM358$};
+        \draw (opamp.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp.+) to[short] ++(-0.5, 0) to[short] ++(0, -0.5) node[ground]{}; 
+        
+        \draw (opamp.-) to[R=$R$,-o] ++(-3,0) node[left]{$U_{in}$};
+        \draw (opamp.-) to[short, *-] ++(0,4) 
+            to[R=$R$,-*] ++(3,0) 
+            to[D, -*] ++(0,-2) 
+            to[D,-*]++(-3,0);
+        \draw (opamp.out) to[short] ++(0.616161616161616,0) to[short] ++(0,3);
+        \draw (1.5,4.5) to[short] ++(2,0)
+            to[sR=$R$, name=sR] ++(0,-3)
+            to[short] ++(0,-5)
+            to[R=$R$] ++(-7.25,0)
+            to[short,-*] ++(0,4);
+            
+        \draw (sR.label) to[short] ++(0,0.75)
+            to[short,-*] ++(0.35,0);
+        
+        \draw (7,1) node[op amp] (opamp2) {$LM358$};
+        \draw (opamp2.up) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp2.down) --++(0,-0.5) node[vee]{$V_{EE}$};
+        \draw (opamp2.+) to[short] ++(-0.5, 0) to[short] ++(0, -0.5) node[ground]{};         
+        
+        \draw (opamp2.-) to[short,-*] ++(-2.3,0);
+        
+        \draw (opamp2.-) to[short, *-] ++(0,2)
+            to[R=$R$,*-*] ++(3,0)
+            to[short,-*] ++(0,-2.5)
+            to[short] (opamp2.out);
+        \draw (opamp2.-) to[short, *-] ++(0,3.5)
+            to[C=$C$] ++(3,0)
+            to[short] ++(0,-2);
+        \draw (opamp2.out) to[short, -o] ++(1,0) node[right]{$U_{out}$};
+        
+        \end{circuitikz}
+    \caption{Präzisionsgleichrichter mit LM358}
+    \label{fig:Gleichrichter_Schaltung}
+ \end{figure}

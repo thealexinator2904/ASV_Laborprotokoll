@@ -54,3 +54,4 @@ din461('\phi',  '°','Hz', '')
 
 hgexport(fig_GR, 'Plots/Gleichrichter.eps')
 hgexport(fig_mikro, 'Plots/Mikrofonverstaerker.eps')
+hgexport(fig_sallenKey, 'Plots/sallen_key.eps')
