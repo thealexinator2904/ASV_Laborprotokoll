@@ -27,7 +27,6 @@ Nun wurde der mithilfe des Trimmers auf eine Offsetspannung von $V_{IO Trimm} = 
 
 Wie in Abbildung \ref{fig:Bode_Folger_ua741} zu sehen ist, beträgt die Grenzfrequenz der Schaltung $f_C=850KHz$. Das ist ungefähr 150KHz weniger als durch Angaben im Datenblatt, sowie der Simulation zu erwarten wäre. Die Begründung für dieses Phänomen liegt wahrscheinlich in der kapazitiven Belastung der Schaltung durch das Messequipment, sowie die kleinen Leckströme die über die Kapazitäten des Steckbretts fließen und der nicht-idealen Entkopplung der Schaltung durch den Aufbau am Steckbrett. 
 
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Lab_1/Plots/Folger.eps}
@@ -76,7 +75,9 @@ $V_{EE} + 1,67V$ & $V_{EE} + 2,39V$      \\ \hline
 
 \section{Nicht invertierender Verstärker}
 \subsection{Aufgabenstellung}
+Es ist die Schaltung aus Abbildung \ref{fig:niinv_Verst_Schaltung} aufzubauen und mit  einer Verstärkung von $\nu=+10$ und $\nu = +101$ auszulegen. Dabei ist die Frequenz zu finden bei welcher der Verstärker das Signal aufgrund der Slew Rate verzerrt. 
 
+Es sind die Frequenzgänge mit den beiden Verstärkungen aufzunehmen und mit 
 \input{Lab_1/Zeichnungen/niinv_verst/Schaltung}
 \subsection{Messaufbau}
 \input{Lab_1/Zeichnungen/niinv_verst/Messaufbau_Zeitverhalten}
