@@ -104,12 +104,11 @@ Von dieser Schaltung ist während der Laboreinheit ein Bodediagramm aufzunehmen 
 \input{Lab_3/Zeichnungen/Sallenkey/Schaltung}
 
 \subsection{Auslegung}
-Zur Auslegung dieser Schaltung ist die Übertragungsfunktion sehr hilfreich.
-
+Zur Auslegung dieser Schaltung ist die Übertragungsfunktion \cite[212]{10.5555/3158302} sehr hilfreich.
 
 \begin{align}
     A(s) = \frac{A_0}{1+a_1s + b_1s^2}&=\frac{A_0}{1+\omega_c[C_1(R_1+R_2) + (1-A_0)R_1C_2]s + {\omega_C}^2R_1R_2C_1C_2s^2} \\
-    \rm mit \it A_0 &= 1+ \frac{R_4}{R_3}
+    \rm mit \it A_0 &= 1+ \frac{R_4}{R_3} 
 \end{align}
 Da dieser Filter eine Butterworth Charakteristik aufweisen soll, gilt für $a_1$ und $b_1$:
 
@@ -141,9 +140,9 @@ Nach Umformen der Gleichungen \ref{eq:a1} und \ref{eq:b1} ergaben sich folgende 
 \lstinputlisting[language = Matlab, caption=matlab Skript zur Auslegung des aktiven Filter]{Lab_3/auslegung_Sallen_key.m}
 
 \subsection{Interpretation der Messergebnisse}
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{Lab_3/}
-    \caption{Caption}
+    \includegraphics[width = \textwidth]{Lab_3/Plots/sallen_key.eps}
+    \caption{Bodediagramm aktiver Tiefpass 2. Ordnung}
     \label{fig:my_label}
 \end{figure}
