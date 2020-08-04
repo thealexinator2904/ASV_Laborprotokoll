@@ -32,7 +32,7 @@ semilogx(struct_mikrofonV_LM358_meas.data(:,1), 1.012.*20.*log10(struct_mikrofon
 semilogx(struct_mikrofonV_AD823_sim.data(:,1), struct_mikrofonV_AD823_sim.data(:,2))
 semilogx(struct_mikrofonV_AD823_meas.data(:,1), 1.012.*20.*log10(struct_mikrofonV_AD823_meas.data(:,3)./struct_mikrofonV_AD823_meas.data(:,2)),'-*')
 legend({'LM358 Simulation','LM358 Messung', 'AD823 Simulation', 'AD823 Messung'}, 'NumColumns', 2)
-ylim([-1 51])
+ylim([14 51])
 din461('f',  '\nu','Hz', '')
 
 fig_sallenKey = figure('Name', 'Sallen Key');
