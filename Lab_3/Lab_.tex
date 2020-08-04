@@ -1,8 +1,9 @@
 \section{Präzisionsgleichrichter mit LM358}
 \subsection{Aufgabenstellung}
+Die Schaltung aus \autoref{fig:Gleichrichter_Schaltung} ist auf einem Steckbrett aufzubauen, dabei ist das Verhalten mit und ohne dem Kondensator C zu dokumentieren. Außerdem ist der Frequenzbereich zu bestimmen in welchem der Fehler der Schaltung bei unter 1\% bleibt.
 \input{Lab_3/Zeichnungen/Gleichrichter/Schaltung}
 \subsection{Messaufbau}
-Die Schalttung wurde mit dem Signalgenerator betrieben und mit $V_{CC} = -V_{EE} = 15V$ versorgt. Der Ausgang der Schaltung wurde mit dem Oszilloskop erfasst. Bei der Messung des Gleichrichtwertes wurde zusätzlich mit dem Tischmultimeter gemessen.
+Die Schaltung wurde mit dem Signalgenerator betrieben und mit $V_{CC} = -V_{EE} = 15V$ versorgt. Der Ausgang der Schaltung wurde mit dem Oszilloskop erfasst. Bei der Messung des Gleichrichtwertes wurde zusätzlich mit dem Tischmultimeter gemessen.
 \subsection{Auslegung der Schaltung}
 Alle verwendeten Widerstände wurden mit dem Nominalwert $R=10k\Omega$ ausgelegt. Das hat einerseits den Vorteil, dass die Quelle nur eine sehr geringe Last erfährt und andererseits hatten wir einen $R_{Trim} = 10k\Omega$ Trimmer zur Verfügung. Dieser wurde eingebaut um Bauteiltoleranzen kompensieren zu können und dafür zu sorgen, dass beide Halbwellen des gleichgerichteten Sinus gleich groß sind.
 
@@ -27,10 +28,26 @@ Das heißt in diesem Fall ist ein Wert der tiefpassgefilterten Spannung von $U_{
 \begin{figure}[H]
     \centering
     \includegraphics[width=\costumPicWidth]{Lab_3/Plots/Gleichrichter.eps}
-    \caption{Simulationsergebnisse des Präzissionsgleichrichters}
+    \caption{Simulationsergebnisse des Präzisionsgleichrichters}
     \label{fig:sim_Gleichrichter}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\costumPicWidth]{Lab_3/Messungen/scope_1.png}
+    \caption{Gleichrichter ohne C}
+    \label{fig:res_gleichrichter_ohne_C}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\costumPicWidth]{Lab_3/Messungen/scope_2.png}
+    \caption{Gleichrichter mit C}
+    \label{fig:res_gleichrichter_mit_C}
+\end{figure}
 \subsection{Ausarbeitungen}
+Ja, für diese Schaltung ist eine Art Offsetabgleich erforderlich. In unserem Fall wurde dies durch den einstellbaren Widerstand $^R/_2$ erreicht worden.
+
+Hier handelt es sich um den arithmetischen Mittelwert. Dieser entspricht dem Gleichrichtwert eines Eingangssignals.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Single Supply Mikrofonverstärker mit LM358 und AD823}
@@ -139,7 +156,7 @@ Nach Umformen der Gleichungen \ref{eq:a1} und \ref{eq:b1} ergaben sich folgende 
 
 \lstinputlisting[language = Matlab, caption=matlab Skript zur Auslegung des aktiven Filter]{Lab_3/auslegung_Sallen_key.m}
 
-\subsection{Interpretation der Messergebnisse}
+\subsection{Simulationsergebnisse}
 \begin{figure}[h]
     \centering
     \includegraphics[width = \costumPicWidth]{Lab_3/Plots/sallen_key.eps}

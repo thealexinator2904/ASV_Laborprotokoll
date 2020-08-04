@@ -1,0 +1,45 @@
+\begin{figure}[H]
+    \centering
+    \scalebox{0.75}{
+    \begin{circuitikz}[]
+        \draw (-8.5,0.5) node[inst amp ra](instamp){AD627};
+        \draw (instamp.ra+) to[R=$R_4$] (instamp.ra-);
+        \draw (instamp.-) to[R=$R_3$] ++(0,2) node[ground, yscale=-1]{};
+        \draw (instamp.-) to[short,*-] ++(-2,0) to[C=$C_3$] ++(0,2) node[ground, yscale=-1]{};
+        \draw (instamp.-) to[short,*-] ++(-2,0) to[C=$C_1$] ++(-2,0) to[R=$R_1$,-o] ++(-2,0) node[left]{Grün};
+
+        \draw (instamp.+) to[R=$R_5$] ++(0,-2) node[ground]{};
+        \draw (instamp.+) to[short,*-] ++(-2,0) to[C=$C_5$] ++(0,-2) node[ground]{};
+        \draw (instamp.+) to[short,*-] ++(-2,0) to[C=$C_2$] ++(-2,0) to[R=$R_2$,-o] ++(-2,0) node[left]{Rot};
+
+        \draw (instamp.-) to[short,*-] ++(-2,0) to[C=$C_4$,*-*] ++(0,-2.85);
+        
+        \draw (-16,-3) node[left] {Gelb} to[short,o-]++(1,0) to[short]++(0,-1) node[ground]{};
+        
+        \draw (instamp.refv down) to[short] ++(0,-1) node[ground]{};
+        
+        \draw (0,0) node[op amp,yscale=-1] (opamp) {\scalebox{1}[-1]{$AD823$}};
+        \draw (opamp.down) --++(0,0.5) node[vcc]{$V_{CC}$};
+        \draw (opamp.up) --++(0,-0.5) node[vee]{$V_{EE}$};
+        
+        \draw (opamp.+) to[short, -*] ++(-2,0)
+            to[C=$C_7$] ++(0,-2) node[ground]{};
+        \draw (opamp.+) to[short, -*] ++(-2,0)
+            to[R=$R_7$] ++(-2,0)
+            to[R=$R_6$] ++(-2,0);
+        \draw (-5.25,0.5) to[short,*-] ++(0,2)
+            to[C=$C_6$] ++(7.445,0)
+            to[short] ++(0,-2.5)
+            to[short] (opamp.out);
+        \draw (opamp.out) to[short,-*] ++(1,0)
+            to[R=$R_9$,-*] ++(0,-3)
+            to[R=$R_8$] ++(0,-2) node[ground]{};
+        \draw (2.2,-3) to[short] ++(-4,0)
+            to[short] ++(0,2.5)
+            to[short] (opamp.-);
+        \draw (opamp.out) to[short,-o] ++(2,0) node[right] {$U_{out}$};
+        \end{circuitikz}
+        }
+    \caption{EKG-Verstärker}
+    \label{fig:Schalt_EKG_Verst}
+ \end{figure}
