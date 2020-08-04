@@ -90,17 +90,67 @@ Das heißt das nun eine parabelförmige Ausgangsspannung am Ausgang zu erwarten 
     \caption{Dreieckspannung beim Tiefpass erster Ordnung $f > f_g$}
     \label{fig:Dreieck_Tiefpass_erster_Ordnung_big_f}
 \end{figure}
-Wie zu erwarten ergab eine dreieckförmige h
+Wie zu erwarten ergab eine dreieckförmige Eingangsspannung eine Parabel als Ausgangsspannung
 \subsection{Ausarbeitungen}
+Gleich wie beim invertierenden Verstärker bildet sich am invertierenden Eingang ein virtueller Nullpunkt,
+wodurch die Quelle nur durch den Widerstand $R_1$ belastet wird.
 
+Die die Tiefpasswirkung, also die Trägheit, der Schaltung, verhindert schnelle Änderungen am Ausgang. Bei
+niedrigen Frequenzen wären hohe Spannungen möglich, aber zusammen mit der niedrigen wird die Slew Rate
+nicht überschritten. Bei gleicher Eingangsspannung aber einer höheren Frequenz wird das Signal stark
+abgeschwächt, wodurch am Ausgang die Spannungsänderung pro Zeit auch klein bleibt. Diese Schaltung kann also
+nicht bezüglich der Slew Rate übersteuert werden.
+
+Eine Möglichkeit, einen Gleichspannungs-Offset wegzubekommen, wäre ein Koppelkondensator. Durch die
+Hochpasswirkung entsteht ein Bandpass statt einem Tiefpass, also ist die minimale Frequenz begrenzt, bei der es
+noch wie ein Tiefpass wirkt. 
+
+Laut Datenblatt müssen die möglichen Werte 2V unter der Versorgungsspannung liegen.
+
+Die B-Endstufe des OPV steuert im Übergangsbereich zwischen positiver und negativer Ausgangsspannung
+nicht exakt linear aus.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hochpass erster Ordnung mit LM358}
 \subsection{Aufgabenstellung}
+Von dieser Schaltung ist messtechnisch die Grenzfrequenz zu ermitteln.
+
+Es ist das Verhalten der Schaltung zu ermitteln wenn am Eingang Rechteck und Dreieckspannungen anliegen.
+
+Das Bodediagramm der Schaltung ist zu ermitteln
 \input{Lab_2/Zeichnungen/Hochpass/Schaltung}
+\subsection{Auslegung}
+\begin{align}
+    \nu = -\frac{R_2}{R_1} &= -10\\
+    R_1 = 1k\Omega \Rightarrow R_2 &= 10k\Omega\\
+    C = \frac{1}{2\pi f_g R_1} &= 15,9nF
+\end{align}
 \subsection{Messaufbau}
 \input{Lab_2/Zeichnungen/Hochpass/Messaufbau_Zeitverhalten}
-\subsection{Auslegung der Schaltung}
+\subsection{Messergebnisse}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\costumPicWidth]{Lab_2/Plots/HP_first_order.eps}
+    \caption{Bodediagramm des Hochpass erster Ordnung}
+    \label{fig:Bode_HP_first_order}
+\end{figure}
+\subsubsection{Rechteckspannung}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\costumPicWidth]{Lab_2/Messungen/HP_first_order/scope_66.png}
+    \caption{Bodediagramm des Hochpass erster Ordnung}
+    \label{fig:Bode_HP_first_order}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\costumPicWidth]{Lab_2/Messungen/HP_first_order/scope_53.png}
+    \caption{Bodediagramm des Hochpass erster Ordnung}
+    \label{fig:Bode_HP_first_order}
+\end{figure}
 
-\subsection{Interpretation der Messergebnisse}
+\subsubsection{Dreieckspannung}
+
 
 \subsection{Ausarbeitungen}
+Da das Kleinsignalverhalten immer für sehr hohe Frequenzen bestimmt wird (also alle Kapazitäten leitend), beträgt der Eingangswiderstand dieser Schaltung den Wert $R_1$. Im Gleichspannungsfall würde dieser unendlich hoch sein, da die Kapazität in diesem Fall sperrend wirkt.
+
+Diese Schaltung kann hinsichtlich der Slew Rate auf alle Fälle übersteuern, da die Verstärkung vor allem hohe Frequenzen betrifft.
