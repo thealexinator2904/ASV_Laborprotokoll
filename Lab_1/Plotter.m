@@ -17,7 +17,7 @@ struct_niinv_verst_meas = importdata('Messungen/niinv_verst_meas.txt');
 %Messungen
 
 %% Folgerschaltung
-fig_folger = figure('Name', 'Folgerschaltung');
+fig_folger = figure('Name', 'Folgerschaltung', 'units','normalized','outerposition',[0 0 1 1]);
 %print sim
 bodePlot_din461(fig_folger,struct_folger_sim.data(:,1),...
     struct_folger_sim.data(:,4),...
@@ -27,14 +27,14 @@ bodePlot_din461(fig_folger,struct_folger_sim.data(:,1),...
 bodePlot_din461(fig_folger, struct_folger_meas.data(:,1), ...
     struct_folger_meas.data(:,2),...
     struct_folger_meas.data(:,3),...
-    struct_folger_meas.data(:,4),'*-', false);
+    struct_folger_meas.data(:,4),'*-', true);
 legend('Simulation', 'Messung');
 subplot(2,1,1)
-ylim([-20 1])
+%ylim([-20 1])
 
 
 %% invertierender Verstï¿½rker
-fig_inv_verst = figure('Name', 'invertierender Verstärker');
+fig_inv_verst = figure('Name', 'invertierender Verstärker', 'units','normalized','outerposition',[0 0 1 1]);
 % print sims 
 for i = 0 : 1
 bodePlot_din461(fig_inv_verst,struct_inv_verst_sim.data(:,1),...
@@ -47,7 +47,7 @@ end
 bodePlot_din461(fig_inv_verst, struct_inv_verst_meas.data(:,1), ...
     struct_inv_verst_meas.data(:,2), ...
     struct_inv_verst_meas.data(:,3), ...
-    struct_inv_verst_meas.data(:,4), '-*', false);
+    struct_inv_verst_meas.data(:,4), '-*', true);
 %xlim([1 1e5])
 subplot(2,1,1)
 %xlim([1 1e5])
@@ -56,7 +56,7 @@ legend('simualtion \nu = 60dB', 'simualtion \nu = 40dB', 'Messung \nu=20dB')
 
 %% nicht invertierender Verstï¿½rker
 
-fig_niinv_verst = figure('Name', 'nicht invertierender VerstÃ¤rker');
+fig_niinv_verst = figure('Name', 'nicht invertierender VerstÃ¤rker', 'units','normalized','outerposition',[0 0 1 1]);
 % Print sims
 for i = 0 : 2
 bodePlot_din461(fig_niinv_verst,struct_niinv_verst_sim.data(:,1),...

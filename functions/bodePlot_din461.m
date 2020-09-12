@@ -9,7 +9,7 @@ hold('on');
 
 title('Betrag')
 if printscales
-    din461('\it f', '\nu', 'Hz', 'db');
+    din461('\it f \rm in Hz', '\nu in dB', '', '');
 end
 
 subplot(2,1,2)
@@ -20,7 +20,7 @@ hold('on');
 
 title('Phasenwinkel');
 if printscales
-    din461('\it f', '\phi', 'Hz', '°');
+    din461('\it f \rm in Hz', '\phi in °', '', '');
 end
 end
 
