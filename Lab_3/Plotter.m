@@ -16,6 +16,7 @@ struct_mikrofonV_LM358_meas = importdata('Messungen/Mikrofonverst_LM358.txt');
 struct_mikrofonV_AD823_meas = importdata('Messungen/Mikrofonverst_AD523.txt');
 
 struct_sallenKey_sim = importdata('Sims/sallen_key.txt');
+struct_sallenKey_meas = importdata('Messungen/sallen_key.txt');
 
 fig_GR = figure('Name', 'Pr√§zisionsgleichrichter');
 plot(struct_gleichrichter.ohneTP.data(:,1)*1e3, struct_gleichrichter.ohneTP.data(:,2)*1e3)
@@ -24,6 +25,7 @@ grid minor
 hold on
 plot(struct_gleichrichter.mitTP.data(:,1)*1e3, struct_gleichrichter.mitTP.data(:,2)*1e3)
 din461('t',  'U_{OUT}','ms', 'mV')
+legend('ohne C', 'mit C')
 %set(fig_GR,'Position',pos_fig1)
 
 fig_mikro = figure('Name', 'Mikrofonverst√§rker');
@@ -43,17 +45,21 @@ subplot(2,1,1)
 semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,2))
 grid minor
 hold on
+semilogx(struct_sallenKey_meas.data(:,1),20.*log10(struct_sallenKey_meas.data(:,3)./struct_sallenKey_meas.data(:,2)),'-*')
+legend('Simulation', 'Messung')
 
 ylim([0 25])
 xlim([1 0.25e3])
 din461('f',  '\nu','Hz', '')
 subplot(2,1,2)
+legend('Simulation', 'Messung')
 
 semilogx(struct_sallenKey_sim.data(:,1),struct_sallenKey_sim.data(:,3))
 xlim([1 0.25e3])
 grid minor
 hold on
-din461('\phi',  '∞','Hz', '')
+semilogx(struct_sallenKey_meas.data(:,1),struct_sallenKey_meas.data(:,4), '-*')
+din461('f',  '\phi','Hz', '∞')
 set(fig_sallenKey,'Position',pos_fig1)
 
 hgexport(fig_GR, 'Plots/Gleichrichter.eps')

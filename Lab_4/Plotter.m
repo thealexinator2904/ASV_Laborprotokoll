@@ -38,6 +38,12 @@ semilogx(struct_meas.data(:,1),struct_meas.data(:,3),'-*')
 din461('f',  '\phi','Hz', '°')
 grid on
 hold on
+subplot(2,1,1)
+legend('Simulation', 'Messung')
+subplot(2,1,2)
+legend('Simulation', 'Messung')
+
+
 set(fig_EKG,'Position',pos_fig1)
 
 hgexport(fig_EKG, 'Plots/EKG.eps')
