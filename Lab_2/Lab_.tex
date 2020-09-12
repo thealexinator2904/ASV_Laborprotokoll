@@ -74,7 +74,7 @@ Bei Rechteckspannung die sehr viel kleiner sind als die Grenzfrequenz ist eine K
 Auch in diesem Fall kann die Übertragungsfunktion zu Rate gezogen werden um eine Aussage über die erwartete Ausgangsspannung zu treffen. Bei dieser Eingangsspannung ist lediglich eine anderes unbestimmtes Integral zu lösen.
 
 \begin{align}
-    \int{u du} = u^2 + c
+    \int{u du} = \frac{1}{2} u^2 + c
 \end{align}
 Das heißt das nun eine parabelförmige Ausgangsspannung am Ausgang zu erwarten ist.
 
@@ -101,9 +101,8 @@ nicht überschritten. Bei gleicher Eingangsspannung aber einer höheren Frequenz
 abgeschwächt, wodurch am Ausgang die Spannungsänderung pro Zeit auch klein bleibt. Diese Schaltung kann also
 nicht bezüglich der Slew Rate übersteuert werden.
 
-Eine Möglichkeit, einen Gleichspannungs-Offset wegzubekommen, wäre ein Koppelkondensator. Durch die
-Hochpasswirkung entsteht ein Bandpass statt einem Tiefpass, also ist die minimale Frequenz begrenzt, bei der es
-noch wie ein Tiefpass wirkt. 
+\input{Lab_2/Zeichnungen/Tiefpass/offset}
+Die in Abbildung \ref{fig:offsetabgleich_Tiefpass} gezeigte Schaltung besitzt nun einen weiteren Eingang an welchem eine Referenzspannung angelegt werden kann. Damit kann ein Offsetabgleich durchgeführt werden, da sich dieser Eingang praktisch wie eine Additionsschaltung verhält und 
 
 Laut Datenblatt müssen die möglichen Werte 2V unter der Versorgungsspannung liegen.
 
@@ -140,6 +139,11 @@ Das Bodediagramm der Schaltung ist zu ermitteln
     \label{fig:HP_FO_fg}
 \end{figure}
 \subsubsection{Rechteckspannung}
+Auch hier ist wieder zu sehen, dass sich die Ausgangsspannung wie mathemtatisch zu erwarten verhält.
+\begin{align}
+    \frac{dx}{dt}1=\frac{1}{x}\\
+    \frac{dx}{dt}x = 1
+\end{align}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\costumPicWidth]{Lab_2/Messungen/HP_first_order/scope_66.png}
