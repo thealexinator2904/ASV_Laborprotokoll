@@ -4,6 +4,7 @@ close all;
 addpath(genpath('Sims/'));
 addpath(genpath('Messungen/'))
 addpath(genpath('../functions'))
+pos_fig1 = [0 0 800 800];
 
 %% Datenimport
 %simulationen
@@ -18,7 +19,6 @@ struct_niinv_verst_meas = importdata('Messungen/niinv_verst_meas.txt');
 
 %% Folgerschaltung
 fig_folger = figure('Name', 'Folgerschaltung');
-pos_fig1 = [0 0 800 800];
 %print sim
 bodePlot_din461(fig_folger,struct_folger_sim.data(:,1),...
     struct_folger_sim.data(:,4),...
@@ -30,11 +30,10 @@ bodePlot_din461(fig_folger, struct_folger_meas.data(:,1), ...
     struct_folger_meas.data(:,3),...
     struct_folger_meas.data(:,4),'*-', true);
 legend('Simulation', 'Messung');
-set(fig_folger,'Position',pos_fig1)
-
 subplot(2,1,1)
-%ylim([-20 1])
+legend('Simulation', 'Messung');
 
+set(fig_folger,'Position',pos_fig1)
 
 %% invertierender Verstï¿½rker
 fig_inv_verst = figure('Name', 'invertierender Verstärker');
@@ -53,10 +52,11 @@ bodePlot_din461(fig_inv_verst, struct_inv_verst_meas.data(:,1), ...
     struct_inv_verst_meas.data(:,4), '-*', true);
 %xlim([1 1e5])
 subplot(2,1,1)
-%xlim([1 1e5])
 ylim([-10 61])
 legend('simualtion \nu = 60dB', 'simualtion \nu = 40dB', 'Messung \nu=20dB')
 set(fig_inv_verst,'Position',pos_fig1)
+subplot(2,1,2)
+legend('simualtion \nu = 60dB', 'simualtion \nu = 40dB', 'Messung \nu=20dB')
 
 
 %% nicht invertierender Verstï¿½rker
@@ -80,7 +80,11 @@ bodePlot_din461(fig_niinv_verst, struct_niinv_verst_meas.data(:,1), ...
     struct_niinv_verst_meas.data(:,2), ...
     struct_niinv_verst_meas.data(:,5), ...
     struct_niinv_verst_meas.data(:,6), '-*', true);
-legend('sim1', 'sim2','sim3', 'sim4')
+subplot(2,1,1)
+legend('simualtion \nu = 40dB', 'simualtion \nu = 20dB','simualtion \nu = 0dB', 'Messung \nu = 20dB', 'Messung \nu = 40dB')
+subplot(2,1,2)
+legend('simualtion \nu = 40dB', 'simualtion \nu = 20dB','simualtion \nu = 0dB', 'Messung \nu = 20dB', 'Messung \nu = 40dB')
+
 set(fig_niinv_verst,'Position',pos_fig1)
 
 

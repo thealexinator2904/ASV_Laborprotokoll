@@ -5,6 +5,7 @@ format short eng
 addpath(genpath('Sims/'));
 addpath(genpath('Messungen/'))
 addpath(genpath('../functions'))
+pos_fig1 = [0 0 800 800];
 
 struct_sim = importdata('Sims/Spec_ekg.txt');
 struct_meas = importdata('Messungen/ekg.txt');
@@ -37,5 +38,6 @@ semilogx(struct_meas.data(:,1),struct_meas.data(:,3),'-*')
 din461('f',  '\phi','Hz', '°')
 grid on
 hold on
+set(fig_EKG,'Position',pos_fig1)
 
 hgexport(fig_EKG, 'Plots/EKG.eps')
