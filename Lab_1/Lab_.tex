@@ -33,7 +33,7 @@ Wie in Abbildung \ref{fig:Bode_Folger_ua741} zu sehen ist, beträgt die Grenzfre
     \caption{Folgerschaltung bei der Grenzfrequenz}
     \label{fig:fg_Folger_ua741}
 \end{figure}
-\input{}
+\input{Lab_1/Messungen/folger_meas_Table.tex}
 In \autoref{fig:fg_Folger_ua741} ist zu sehen, dass die Grenzfrequenz dieser Schaltung bei circa $f_g=826,48\kHz$ liegt. Im Datenblatt ist eine typische Grenzfrequenz bei Unity-Gain von $f_g=1\MHz$(\cite[9]{ti:ua741}) angegeben. Auch in der Simulation lag die die Grenzfrequenz bei $1\MHz$. Die Abweichung zwischen gemessenen und Werten im Datenblatt kann an der parasitären Kapazitäten im Steckbrett erklärt werden. Diese erzeugen vermutlich in der Feebackleitung durch einen kleinen Leitungswiderstand und eine winzige Kapazität einen Tiefpass erster Ordnung. Die genauen \glqq Bauteilwerte\grqq dieser Effekte wurden nicht gemessen, da sie ohnehin nicht vermeidbar sind in diesem Aufbau und die Abweichung auch nicht riesig ist und in weiteren Übungen zu Problemen führen würden.
 
 \begin{figure}[H]
@@ -213,6 +213,7 @@ Zur Aufnahme aller Messungen wurde sowohl die Ein- als auch die Ausgangsspannung
     \caption{Bodediagramm invertierender Verstärker}
     \label{fig:bode_inv_verst}
 \end{figure}
+\input{Lab_1/Messungen/inv_verst_meas_Table}
 Solange die Verstärkerschaltung nicht übersteuert, regelt der OPV die Eingangsspannungen (ideal betrachtet) auf
 den gleichen Wert, also U+ = U-. Wenn übersteuert wird, funktioniert diese Regelung nicht mehr. Statt dem
 virtuellen Nullpunkt ist am invertierenden Eingang dann die Differenz-Spannung zwischen tatsächlichem und
