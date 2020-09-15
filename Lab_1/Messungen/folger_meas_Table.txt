@@ -9,18 +9,18 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 $f$       & $U_{in}$    & $U_{out}$   & $\phi$        \\ \hline
-$1\Hz$    & $201,38\mV$ & $202,14\mV$ & $-0,021\deg$  \\ \hline
-$10\Hz$   & $209,17\mV$ & $203,02\mV$ & $-2,522\deg$  \\ \hline
-$100\Hz$  & $209,05\mV$ & $203,02\mV$ & $-2,288\deg$  \\ \hline
-$1\kHz$   & $209,80\mV$ & $205,03\mV$ & $-0,541\deg$  \\ \hline
-$10\Hz$   & $212,19\mV$ & $208,54\mV$ & $-0,047\deg$  \\ \hline
-$100\kHz$ & $213,07\mV$ & $222,19\mV$ & $-1,554\deg$  \\ \hline
-$300\kHz$ & $219,10\mV$ & $205,03\mV$ & $-20,82\deg$  \\ \hline
-$600\kHz$ & $212,06\mV$ & $186,31\mV$ & $-46,22\deg$  \\ \hline
-$800\kHz$ & $213,07\mV$ & $168,84\mV$ & $-63,14\deg$  \\ \hline
-$825\kHz$ & $202,6\mV$  & $152,0\mV$  & $-61,65\deg$  \\ \hline
-$1\MHz$   & $206,0\mV$  & $130,4\mV$  & $-73,03\deg$  \\ \hline
-$2\MHz$   & $205,5\mV$  & $65,6\mV$   & $-117,89\deg$ \\ \hline
-$4\MHz$   & $207,5\mV$  & $27,3\mV$   & $-170,33\deg$ \\ \hline
+$1\Hz$    & $201,38\mV$ & $202,14\mV$ & $-0,021\degree$  \\ \hline
+$10\Hz$   & $209,17\mV$ & $203,02\mV$ & $-2,522\degree$  \\ \hline
+$100\Hz$  & $209,05\mV$ & $203,02\mV$ & $-2,288\degree$  \\ \hline
+$1\kHz$   & $209,80\mV$ & $205,03\mV$ & $-0,541\degree$  \\ \hline
+$10\Hz$   & $212,19\mV$ & $208,54\mV$ & $-0,047\degree$  \\ \hline
+$100\kHz$ & $213,07\mV$ & $222,19\mV$ & $-1,554\degree$  \\ \hline
+$300\kHz$ & $219,10\mV$ & $205,03\mV$ & $-20,82\degree$  \\ \hline
+$600\kHz$ & $212,06\mV$ & $186,31\mV$ & $-46,22\degree$  \\ \hline
+$800\kHz$ & $213,07\mV$ & $168,84\mV$ & $-63,14\degree$  \\ \hline
+$825\kHz$ & $202,6\mV$  & $152,0\mV$  & $-61,65\degree$  \\ \hline
+$1\MHz$   & $206,0\mV$  & $130,4\mV$  & $-73,03\degree$  \\ \hline
+$2\MHz$   & $205,5\mV$  & $65,6\mV$   & $-117,89\degree$ \\ \hline
+$4\MHz$   & $207,5\mV$  & $27,3\mV$   & $-170,33\degree$ \\ \hline
 \end{tabular}
 \end{table}
