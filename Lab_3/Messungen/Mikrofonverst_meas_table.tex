@@ -1,50 +1,50 @@
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[]
+\begin{table}[H]
 \centering
 \caption{Messergebnisstabelle Mikrofonverstärker}
 \label{tab:Mikrofon_erg_tab}
 \begin{tabular}{l||l|l||l|l|}
 \cline{2-5}
-                                                & \multicolumn{2}{l|}{AD523} & \multicolumn{2}{l|}{LM358} \\ \hline
+                                                & \multicolumn{2}{l||}{AD523} & \multicolumn{2}{l|}{LM358} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}$f$} &$ U_{in}       $&$ U_{out}     $&$ U_{in}       $&$ U_{out}  $\\ \hline
-\multicolumn{1}{|l|}{$1\Hz$}                         &$ 51,457\mV    $&$ 221,11\mV   $&$ 51,457\mV   $&$ 248,24\mV    $\\ \hline
-\multicolumn{1}{|l|}{$2\Hz$}                         &$ 51,960\mV    $&$ 713,07\mV   $&$ 51,859\mV   $&$ 710,55\mV    $\\ \hline
-\multicolumn{1}{|l|}{$4\Hz$}                         &$ 51,357\mV    $&$ 1,9812\Hz      $&$ 51,558\mV   $&$ 1,9799\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$8\Hz$}                         &$ 51,558\mV    $&$ 3,5377\Hz      $&$ 51,859\mV   $&$ 3,5879\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$16\Hz$}                        &$ 51,055\mV    $&$ 4,5176\Hz      $&$ 51,156\mV   $&$ 4,4526\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$32\Hz$}                        &$ 51,357\mV    $&$ 4,8015\Hz      $&$ 51,457\mV   $&$ 4,8291\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$64\Hz$}                        &$ 51,558\mV    $&$ 4,8894\Hz      $&$ 51,960\mV   $&$ 4,8844\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$100\Hz$}                       &$              $&$             $&$ 51,558\mV   $&$ 4,9422\Hz       $\\ \hline
-\multicolumn{1}{|l|}{$1\kHz$}                       &$ 51,960\mV    $&$ 4,9598\Hz      $&$ 049,6\mV    $&$ 4,905\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$1,5\kHz$}                     &$              $&$             $&$ 050,5\mV    $&$ 4,872\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$2\kHz$}                       &$ 050,4\mV     $&$ 4,917\Hz       $&$ 51,10\mV    $&$ 4,821\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$3\kHz$}                       &$              $&$             $&$ 050,5\mV    $&$ 4,681\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$4\kHz$}                       &$ 050,6\mV     $&$ 4,915\Hz       $&$ 050,9\mV    $&$ 4,560\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$5\kHz$}                       &$              $&$             $&$ 050,9\mV    $&$ 4,384\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$6\kHz$}                       &$              $&$             $&$ 051,3\mV    $&$ 4,196\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$7\kHz$}                       &$              $&$             $&$ 051,0\mV    $&$ 4,000\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$8\kHz$}                       &$ 050,5\mV     $&$ 4,864\Hz       $&$ 051,4\mV    $&$ 3,812\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$10\kHz$}                      &$ 050,6\mV     $&$ 4,864\Hz       $&$ 051,0\mV    $&$ 3,427\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$20\kHz$}                      &$ 050,8\mV     $&$ 4,824\Hz       $&$ 051,3\mV    $&$ 2,126\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$40\kHz$}                      &$ 051,2\mV     $&$ 4,545\Hz       $&$ 051,6\mV    $&$ 1,141\Hz        $\\ \hline
-\multicolumn{1}{|l|}{$60\kHz$}                      &$ 051,6\mV     $&$ 4,239\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$65\kHz$}                      &$ 051,4\mV     $&$ 4,131\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$70\kHz$}                      &$ 051,5\mV     $&$ 4,043\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$75\kHz$}                      &$ 051,7\mV     $&$ 3,940\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$80\kHz$}                      &$ 051,4\mV     $&$ 3,839\Hz       $&$ 052,0\mV    $&$ 570,9\mV     $\\ \hline
-\multicolumn{1}{|l|}{$85\kHz$}                      &$ 051,3\mV     $&$ 3,751\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$90\kHz$}                      &$ 051,8\mV     $&$ 3,658\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$95\kHz$}                      &$ 051,4\mV     $&$ 3,565\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$100\kHz$}                     &$ 051,4\mV     $&$ 3,480\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$110\kHz$}                     &$ 051,5\mV     $&$ 3,307\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$120\kHz$}                     &$ 051,7\mV     $&$ 3,151\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$130\kHz$}                     &$ 051,6\mV     $&$ 3,003\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$150\kHz$}                     &$ 052,0\mV     $&$ 2,729\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$200\kHz$}                     &$ 052,3\mV     $&$ 2,209\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$250\kHz$}                     &$ 052,3\mV     $&$ 1,829\Hz       $&$             $&$              $\\ \hline
-\multicolumn{1}{|l|}{$500\kHz$}                     &$ 052,3\mV     $&$ 965\mV      $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{\cellcolor[HTML]{C0C0C0}$f$} &$ U_{in}       $&$ U_{out}     $&$ U_{in}       $&$ U_{out}  $\\ \hline
+\multicolumn{1}{|l||}{$1\Hz$}                         &$ 51,457\mV    $&$ 221,11\mV   $&$ 51,457\mV   $&$ 248,24\mV    $\\ \hline
+\multicolumn{1}{|l||}{$2\Hz$}                         &$ 51,960\mV    $&$ 713,07\mV   $&$ 51,859\mV   $&$ 710,55\mV    $\\ \hline
+\multicolumn{1}{|l||}{$4\Hz$}                         &$ 51,357\mV    $&$ 1,9812\V      $&$ 51,558\mV   $&$ 1,9799\V       $\\ \hline
+\multicolumn{1}{|l||}{$8\Hz$}                         &$ 51,558\mV    $&$ 3,5377\V      $&$ 51,859\mV   $&$ 3,5879\V       $\\ \hline
+\multicolumn{1}{|l||}{$16\Hz$}                        &$ 51,055\mV    $&$ 4,5176\V      $&$ 51,156\mV   $&$ 4,4526\V       $\\ \hline
+\multicolumn{1}{|l||}{$32\Hz$}                        &$ 51,357\mV    $&$ 4,8015\V      $&$ 51,457\mV   $&$ 4,8291\V       $\\ \hline
+\multicolumn{1}{|l||}{$64\Hz$}                        &$ 51,558\mV    $&$ 4,8894\V      $&$ 51,960\mV   $&$ 4,8844\V       $\\ \hline
+\multicolumn{1}{|l||}{$100\Hz$}                       &$              $&$             $&$ 51,558\mV   $&$ 4,9422\V       $\\ \hline
+\multicolumn{1}{|l||}{$1\kHz$}                       &$ 51,960\mV    $&$ 4,9598\V      $&$ 049,6\mV    $&$ 4,905\V        $\\ \hline
+\multicolumn{1}{|l||}{$1,5\kHz$}                     &$              $&$             $&$ 050,5\mV    $&$ 4,872\V        $\\ \hline
+\multicolumn{1}{|l||}{$2\kHz$}                       &$ 050,4\mV     $&$ 4,917\V       $&$ 51,10\mV    $&$ 4,821\V        $\\ \hline
+\multicolumn{1}{|l||}{$3\kHz$}                       &$              $&$             $&$ 050,5\mV    $&$ 4,681\V        $\\ \hline
+\multicolumn{1}{|l||}{$4\kHz$}                       &$ 050,6\mV     $&$ 4,915\V       $&$ 050,9\mV    $&$ 4,560\V        $\\ \hline
+\multicolumn{1}{|l||}{$5\kHz$}                       &$              $&$             $&$ 050,9\mV    $&$ 4,384\V        $\\ \hline
+\multicolumn{1}{|l||}{$6\kHz$}                       &$              $&$             $&$ 051,3\mV    $&$ 4,196\V        $\\ \hline
+\multicolumn{1}{|l||}{$7\kHz$}                       &$              $&$             $&$ 051,0\mV    $&$ 4,000\V        $\\ \hline
+\multicolumn{1}{|l||}{$8\kHz$}                       &$ 050,5\mV     $&$ 4,864\V       $&$ 051,4\mV    $&$ 3,812\V        $\\ \hline
+\multicolumn{1}{|l||}{$10\kHz$}                      &$ 050,6\mV     $&$ 4,864\V       $&$ 051,0\mV    $&$ 3,427\V        $\\ \hline
+\multicolumn{1}{|l||}{$20\kHz$}                      &$ 050,8\mV     $&$ 4,824\V       $&$ 051,3\mV    $&$ 2,126\V        $\\ \hline
+\multicolumn{1}{|l||}{$40\kHz$}                      &$ 051,2\mV     $&$ 4,545\V       $&$ 051,6\mV    $&$ 1,141\V        $\\ \hline
+\multicolumn{1}{|l||}{$60\kHz$}                      &$ 051,6\mV     $&$ 4,239\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$65\kHz$}                      &$ 051,4\mV     $&$ 4,131\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$70\kHz$}                      &$ 051,5\mV     $&$ 4,043\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$75\kHz$}                      &$ 051,7\mV     $&$ 3,940\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$80\kHz$}                      &$ 051,4\mV     $&$ 3,839\V       $&$ 052,0\mV    $&$ 570,9\mV     $\\ \hline
+\multicolumn{1}{|l||}{$85\kHz$}                      &$ 051,3\mV     $&$ 3,751\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$90\kHz$}                      &$ 051,8\mV     $&$ 3,658\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$95\kHz$}                      &$ 051,4\mV     $&$ 3,565\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$100\kHz$}                     &$ 051,4\mV     $&$ 3,480\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$110\kHz$}                     &$ 051,5\mV     $&$ 3,307\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$120\kHz$}                     &$ 051,7\mV     $&$ 3,151\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$130\kHz$}                     &$ 051,6\mV     $&$ 3,003\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$150\kHz$}                     &$ 052,0\mV     $&$ 2,729\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$200\kHz$}                     &$ 052,3\mV     $&$ 2,209\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$250\kHz$}                     &$ 052,3\mV     $&$ 1,829\V       $&$             $&$              $\\ \hline
+\multicolumn{1}{|l||}{$500\kHz$}                     &$ 052,3\mV     $&$ 965\mV      $&$             $&$              $\\ \hline
 \end{tabular}
 \end{table}
