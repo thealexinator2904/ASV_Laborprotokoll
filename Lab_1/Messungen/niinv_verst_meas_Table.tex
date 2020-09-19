@@ -1,15 +1,12 @@
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[H]
 \centering
 \caption{Messergebnistabelle nicht-invertierender Versärker}
 \label{tab:niinv_erg_tab}
-\begin{tabular}{ll|l|l|l|l|}
+\begin{tabular}{ll||l|l||l|l|}
 \cline{3-6}
                                                    &                & \multicolumn{2}{l|}{$\nu = 10$}     & \multicolumn{2}{l|}{$\nu=101$}          \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}$f $} & $ U_{in}     $ & $ U{_out} $    & $ \Phi $           & $ U_{out} $       & $ \Phi $            \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}$f $} & $ U_{in}     $ & $ U_{out} $    & $ \Phi $           & $ U_{out} $       & $ \Phi $            \\ \hline
 \multicolumn{1}{|l|}{$1\Hz        $}               & $ 101,76\mV $  & $ 988,44\mV  $ & $ -0,440\degree  $ & $ 10,065\V      $ & $ -0,705\degree   $ \\ \hline
 \multicolumn{1}{|l|}{$10\Hz      $}                & $ 102,14\mV $  & $ 980,90\mV  $ & $ -0,933\degree  $ & $ 10,070\V      $ & $ -0,956\degree   $ \\ \hline
 \multicolumn{1}{|l|}{$100\Hz      $}               & $ 101,91\mV $  & $ 988,44\mV  $ & $ -0,244\degree  $ & $ 10,075\V      $ & $ -0,244\degree   $ \\ \hline
