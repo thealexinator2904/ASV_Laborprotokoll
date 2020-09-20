@@ -99,7 +99,7 @@ Daraus ergibt sich, dass für die maximale Amplitude die ohne überschreiten der
     \caption{Slew Rate $uA741$,  mit kapazitiver Last}
     \label{fig:res_Folger_slew_rate_kap_last}
 \end{figure}
-Bei dieser Messung ist zu sehen, dass eine kapazitive Last zu einer stark vergrößerten Ansteigszeit und vermutlich wegen der parasitären Induktivität der Leitungen des Steckbretts zu einem Überschwingen nach Erreichen des oberen Aussteuerbereichs führt.
+Bei dieser Messung ist zu sehen, dass eine kapazitive Last zu einer stark vergrößerten Ansteigszeit und zu einem Überschwingen an beiden Aussteuerbereichen führt. 
 
 \subsection{Ausarbeitungen}
 Der Ausgangs-Aussteuerbereich ist dadurch begrenzt, dass die Transistoren am Ausgang des OPVs nicht unbegrenzt niederohmig werden können. Desweiteren befinden sie sich irgendwann in Sättigung. An diesem Punkt kann die Spannung entlang der Kollektor-Emitter-Strecke nicht mehr kleiner werden. Außerdem befinden sich auf diesem Pfad ohmsche Verluste die auch mit steigender Stromstärke am Ausgang steigen.
@@ -177,18 +177,18 @@ Auch hier ist zu erkennen, dass bei größerer Verstärkung bereits bei deutlich
 Der Eingangswiderstand dieser Schaltung wäre bei einem idealen OPamp unendlich groß. Bei dieser Schaltung wird (bei weitem :D) kein idealer Operationsverstärker verwendet, das heißt der Eingangswiderstand der Schaltung entspricht dem Eingangswiderstand des nicht-invertierenden Pins des Verstärkers. Dieser ist zwar groß und befindet sich im Bereich $R_{in}=1\MOhms-300\KOhms$, aber nicht unendlich groß. Um einen definierten Eingagswiderstand zu erhalten, müsste ein paralleler Widerstand (z.B. $R_{in}=50\Omega$) eingesetzt werden. Der dazu parallele Eingangswiderstand des Operationsverstärkers kann wegen seine Größe in den allermeisten Fällen vernachlässigt werden.
 
 
-In \autoref{fig:niinv_mit_Uebersteuern} ist erkennbar, dass die maximale Aussteuerung bei 13,153V liegt, begrenzt durch den negativen Bereich. Für die Berechnung der Großsignalbandbreite wird abhängig von diesem Wert davon ausgegangen, dass die maximale Aussteuerung ohne Verzerrung bei einer Amplitude 13V liegt.
-Gemessen wurde bis zu einer Frequenz von $f_{Meas}=300\kHz$. Dabei war die gemessene Verstärkung für $\nu_{\text{Durchlassvbereich}}=8,5dB$  und für $\nu_{\text{Durchlassvbereich}}=101$ noch $7,7dB$.
+In \autoref{fig:niinv_mit_Uebersteuern} ist erkennbar, dass die maximale Aussteuerung bei 13,153V liegt, begrenzt durch den negativen Bereich. Für die Berechnung der Großsignalbandbreite wird abhängig von diesem Wert davon ausgegangen, dass die maximale Aussteuerung ohne Verzerrung bei einer Amplitude 13V liegt. Zur tatsächlichen maximalen Gleichtaktaussteuerung der Schaltung kann gesagt werden, dass diese dadurch begrenzt wird, dass der Ausgang nicht übersteuern soll. Damit ergibt sich der maximale Aussteuerbereich als Quotient der maximalen Aussteuerung und der Verstärkung. Konkret:
+\begin{align}
+    u_{e,max,\nu=10}&=\frac{|U_{a,max}|}{\nu}=\frac{13,153\V}{10}=1,3153\V \\
+    u_{e,max,\nu=101}&=\frac{|U_{a,max}|}{\nu}=\frac{13,153\V}{101}=130,22\mV
+\end{align}
+
+Die Großsignalbandbreite gibt die Frequenz an, bei der ein sinusförmiges Ausgangssignal bei Vollaussteuerung noch unverzerrt wiedergegeben werden kann. Für ihre Berechnung wird wieder ein Amplitudenwert von 13V angenommen, bei dem es noch zu keinem übersteuern des Ausgangs kommt. Der Wert für die SLR von $0,5^V/_{\mu \text{s}}$ wurde dem Datenblatt des UA741 entnommen.
 
 \begin{align}
-    8,5\dB \longrightarrow 10^\frac{8,5}{20}=  2,6607\longrightarrow \text{GBW}=300\kHz\cdot 2,6607=798,21\kHz \\
-    7,7\dB \longrightarrow 10^\frac{7,7}{20}=  2,4266\longrightarrow \text{GBW}=300\kHz\cdot 2,6607=727,98\kHz 
+    f_{max}=\frac{\text{SLR}}{2\pi\hat{U}}=\frac{0,5\cdot 10^6\frac{\V}{\text{s}}}{2\pi\cdot13\V}=6,121\kHz
 \end{align}
-Laut Datenblatt ist der typische Wert für einen UA741 1MHz, minimal 700kHz. Diese Werte stimmen mit den gemessenen Ergebnissen überein. Für die Berechnung der Frequenz wird der niedrigere der beiden gemessenen Werte verwendet
-\begin{align}
-    f_{Max}=\frac{\text{GBW}}{2\pi \hat{U}_a} =\frac{727,98\kHz}{2\pi13\V}=8,912\kHz
-\end{align}
-Bei einer Amplitude von 13V kann bei einem angenommenen Gain-Bandwidth-Product von $727,98\kHz$ das Signal bis zu einer maximalen Frequenz von $8,912\kHz$ unverzerrt wiedergegeben werden.
+Somit kann bei einer Frequenz von 6,121kHz das Ausgangssignal bei Vollaussteuerung noch unverzerrt wiedergegeben werden.
 
 \section{Invertierender Verstärker}
 \subsection{Aufgabenstellung}
@@ -225,18 +225,17 @@ möglichem Eingangs-Wert vorhanden.
     \caption{Invertierender Verstärker bei Übersteuerung}
     \label{fig:uberst_verst}
 \end{figure}
-Eine negative Ausgangsspannung bedeutet, dass am Ausgang des OPVs eine positive Spannung entsteht. Diese
-Spannung lässt über R2 zum virtuellen Nullpunkt einen Strom fließen, der aus dem OPV kommt. Für positive
-Eingangsspannung ist der Ausgang negativ, also fließt ein Strom durch die Rückkopplung in den OPV hinein.
+Eine negative Ausgangsspannung bedeutet, dass am Ausgang des OPVs eine positive Spannung entsteht. Diese Spannung lässt über R2 zum virtuellen Nullpunkt einen Strom fließen, der aus dem OPV kommt. Für positive Eingangsspannung ist der Ausgang negativ, also fließt ein Strom durch die Rückkopplung in den OPV hinein.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\costumPicWidth]{Lab_1/Messungen/inv_verst/scope_48.png}
     \caption{Invertierender Verstärker dargestellt im X-Y Betrieb des Osilloskop}
     \label{fig:inv_verst_xy}
 \end{figure}
+Bei der Darstellung der Kurve Ua = f(Ue) zeigt sich in der negativen Steigung der Geraden, dass das Ausgangssignal invertiert wird (siehe Abbildung \ref{fig:inv_verst_xy}). Dies bedeutet, dass bei einer negativen Eingangsspannung am Ausgang des Operationsverstärkers eine positive Spannung entsteht. Diese Spannung lässt einen Strom aus dem Ausgang durch R2 zum virtuellen Nullpunkt fließen. Für eine positive Eingangsspannung ist die Ausgangsspannung negativ, also fließt der Strom durch die Rückkoppelung in den Ausgang des Operationsverstärkers hinein.
 
 \subsection{Ausarbeitungen}
-Der Eingangswiderstand dieser Schaltung ist $R_1$. Da beim OPamp im Idealfall an beiden Eingangspins die gleiche Spannung anliegen soll, liegt am virtuellen Nullpunkt das GND Potential an. Daraus ergibt sich, dass $R_1$ der Eingangswiderstand der Schaltung ist.
+Da beim OPamp im Idealfall an beiden Eingangspins die gleiche Spannung anliegen soll, liegt am virtuellen Nullpunkt das GND Potential an. Daraus ergibt sich, dass $R_1$ der Eingangswiderstand der Schaltung ist.
 
 Der nichtinvertierende Eingang liegt auf Ground, also liegt auch der Mittelwert von U+ und U- bei 0V. Damit beträgt die Gleichtaktaussteuerung bei dieser Schaltung 0V.
 \section{Addierschaltung}

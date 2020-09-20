@@ -17,13 +17,7 @@ Es soll bei einer Ausgnagsspannung von $V_{out} = 5V$ ein Strom von $I=1\rm A$ f
 Demnach wurde ein Leistungswiderstand mit einem Wert von 5 Ohm und einer maximalen Leistungsabgabe von 15 Watt verwendet.
 \subsection{Messaufbau}
 Hier wurde bei dem vorhandenen Messaufbau verschiedene Spannungsregler und Kapazitäten verbaut. Danach wurde mittels eines vorgeschalteten Trenntrafos die Eingangsspannung so lange reduziert bis die minimale Drop-out-spannung erreicht wurde. Dies war zu erkennen, dass die Aussgangsspannung einbricht. An diesem Zeitpunkt wurde auch der Screenshot angefertigt. 
-\subsection{Wirkungsgradbetrachtung der Schaltungen}
-\begin{align}
-    \theta = \frac{U_{out}\cdot I_{out}}{U_{in}\cdot I_{in}} \\
-    \text{ mit: } I_{in} \approx I_{out} \\
-    \theta = \frac{U_{out}}{U_{in}}
-\end{align}
-Hier ist zu sehen, dass bei einer niedrigeren Eingangsspannung (die Ausgangsspannung wird als Fixwert betrachtet.) der Wirkungsgrad immer näher zu 1 tendiert. Aus dem nachfolgenden Kapitel ist zu sehen, dass bei dem LM2940 ein höherer Wirkungsgrad zu erwarten ist und das natürlich auch zu einer geringeren Eigenerwärmung führt. 
+
 \subsection{Interpretation der Messergebnisse}
 \begin{figure}[H]
     \centering
@@ -58,12 +52,12 @@ Hier ist zu sehen, dass bei einer niedrigeren Eingangsspannung (die Ausgangsspan
 \begin{tabular}{|l|l|l|l|}
 \hline
 \rowcolor[HTML]{9B9B9B} 
-       & $V_{PP} 1000\uF$ & $V_{PP} 1000\uF$ & minimale Eingangsspannung \\ \hline
+       & $V_{PP} 1000\uF$ & $V_{PP} 4700\uF$ & minimale Eingangsspannung \\ \hline
 LM2940 & $6,445\V$        & $1,3367\V$       & $6,0060\V$                \\ \hline
 LM7805 & $5,993\V$        & $1,194\V$        & $6,7648\V$                \\ \hline
 \end{tabular}
 \end{table}
-Von diesen Messungen lässt sich sagen, dass der Festspannungsregler LM7805 eine weitaus höhere Dropout Spannung benötigt um den Regelbereich nicht zu verlassen. Dies führt unter anderem zu einem höheren Wirkungsgrad. Desweiteren führt eine größerer Kondensator zu höheren Wirkungsgraden, da dieser zu einer besseren Glättung der Eingangsspannung führt und somit geringere Brummspannungen auftreten
+Von diesen Messungen lässt sich sagen, dass der Festspannungsregler LM7805 eine weitaus höhere Dropout Spannung benötigt um den Regelbereich nicht zu verlassen. Dies führt unter anderem zu einem geringeren Wirkungsgrad. Desweiteren führt ein größerer Kondensator zu höheren Wirkungsgraden, da dieser zu einer besseren Glättung der Eingangsspannung führt und somit geringere Brummspannungen auftreten
 
 \subsection{Wirkungsgradbetrachtung der Schaltungen}
 \begin{align}
@@ -71,3 +65,19 @@ Von diesen Messungen lässt sich sagen, dass der Festspannungsregler LM7805 eine
     \text{ mit: } I_{in} \approx I_{out} \\
     \theta = \frac{U_{out}}{U_{in}}
 \end{align}
+Zur Berechnung des Wirkungsgrades wurde die zuvor gemessenen Effektivwerte der Ausgangsspannung verwendet. Desweiteren wurde unter Vernachlässigung des Eigenverbrauchs mit der Formel $\theta=^{U_{out}}/_{U_{in}}$ berechnet.
+Hier ist zu sehen, dass bei einer niedrigeren Eingangsspannung (die Ausgangsspannung wird als Fixwert betrachtet.) der Wirkungsgrad immer näher zu 1 tendiert. Aus dem nachfolgenden Kapitel ist zu sehen, dass bei dem LM2940 ein höherer Wirkungsgrad zu erwarten ist und das natürlich auch zu einer geringeren Eigenerwärmung führt. 
+\begin{table}[H]
+\centering
+\caption{Wirkungsgrade Festspannungsregler}
+\label{tab:erg_table_fest_u_reg}
+\begin{tabular}{l|r|r|r|r|}
+\cline{2-5}
+                                                               & \multicolumn{2}{c|}{\cellcolor[HTML]{C0C0C0}LM7805} & \multicolumn{2}{c|}{\cellcolor[HTML]{C0C0C0}LM2940} \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}$C$} & $1000\uF$                & $4700\uF$                & $1000\uF$                & $4700\uF$                \\ \hline
+\multicolumn{1}{|l|}{$U_{in}\text{ in }\V$}                    & $9,2546$                 & $7,2937$                 & $8,9226$                 & $5,8434$                 \\ \hline
+\multicolumn{1}{|l|}{$U_{out}\text{ in }\V$}                   & $4,9021$                 & $4,8164$                 & $4,8471$                 & $4,7513$                 \\ \hline
+\multicolumn{1}{|l|}{$\theta \text{ in }\%$}                   & $52,96$                  & $66,00$                  & $54,32$                  & $81,31$                  \\ \hline
+\end{tabular}
+\end{table}
